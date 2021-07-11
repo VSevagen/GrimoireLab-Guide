@@ -1,0 +1,448 @@
+<!doctype html>
+<html class="no-js">
+  <head><meta charset="utf-8"/>
+    <meta name="viewport" content="width=device-width,initial-scale=1"/>
+    <meta name="color-scheme" content="light dark"><meta name="generator" content="Docutils 0.17.1: http://docutils.sourceforge.net/" />
+<link rel="index" title="Index" href="../genindex.html" /><link rel="search" title="Search" href="../search.html" /><link rel="prev" title="GrimoireLab Documentation !" href="../index.html" />
+
+    <meta name="generator" content="sphinx-4.0.3, furo 2021.07.05.beta38"/>
+        <title>How to setup SortingHat - GrimoireLab documentation</title>
+      <link rel="stylesheet" type="text/css" href="../_static/pygments.css" />
+    <link rel="stylesheet" type="text/css" href="../_static/styles/furo.css" />
+    <link rel="stylesheet" type="text/css" href="../_static/styles/furo-extensions.css" />
+    
+
+
+<style>
+  :root {
+    --color-code-background: #f8f8f8;
+  --color-code-foreground: black;
+  
+  }
+  @media (prefers-color-scheme: dark) {
+    :root {
+      --color-code-background: #202020;
+  --color-code-foreground: #d0d0d0;
+  
+    }
+  }
+
+  /* For allowing end-user-specific overrides */
+  .override-light {
+    --color-code-background: #f8f8f8;
+  --color-code-foreground: black;
+  
+  }
+  .override-dark {
+    --color-code-background: #202020;
+  --color-code-foreground: #d0d0d0;
+  
+  }
+</style><link media="(prefers-color-scheme: dark)" rel="stylesheet" href="../_static/pygments_dark.css"></head>
+  <body dir="">
+    
+<svg xmlns="http://www.w3.org/2000/svg" style="display: none;">
+  <symbol id="svg-toc" viewBox="0 0 24 24">
+    <title>Contents</title>
+    <svg xmlns="http://www.w3.org/2000/svg" width="24" height="24" viewBox="0 0 24 24" fill="none"
+      stroke-width="1.5" stroke="currentColor" stroke-linecap="round" stroke-linejoin="round">
+      <path stroke="none" d="M0 0h24v24H0z"/>
+      <line x1="4" y1="6" x2="20" y2="6" />
+      <line x1="10" y1="12" x2="20" y2="12" />
+      <line x1="6" y1="18" x2="20" y2="18" />
+    </svg>
+  </symbol>
+  <symbol id="svg-menu" viewBox="0 0 24 24">
+    <title>Menu</title>
+    <svg xmlns="http://www.w3.org/2000/svg" width="24" height="24" viewBox="0 0 24 24" fill="none"
+      stroke="currentColor" stroke-width="2" stroke-linecap="round" stroke-linejoin="round"
+      class="feather feather-menu">
+      <line x1="3" y1="12" x2="21" y2="12"></line>
+      <line x1="3" y1="6" x2="21" y2="6"></line>
+      <line x1="3" y1="18" x2="21" y2="18"></line>
+    </svg>
+  </symbol>
+  <symbol id="svg-arrow-right" viewBox="0 0 24 24">
+    <title>Expand</title>
+    <svg xmlns="http://www.w3.org/2000/svg" width="24" height="24" viewBox="0 0 24 24" fill="none"
+      stroke="currentColor" stroke-width="2" stroke-linecap="round" stroke-linejoin="round"
+      class="feather feather-chevron-right">
+      <polyline points="9 18 15 12 9 6"></polyline>
+    </svg>
+  </symbol>
+</svg>
+
+<input type="checkbox" class="sidebar-toggle" name="__navigation" id="__navigation">
+<input type="checkbox" class="sidebar-toggle" name="__toc" id="__toc">
+<label class="overlay sidebar-overlay" for="__navigation"></label>
+<label class="overlay toc-overlay" for="__toc"></label>
+
+
+
+<div class="page">
+  <header class="mobile-header">
+    <div class="header-left">
+      <label class="nav-overlay-icon" for="__navigation">
+        <i class="icon"><svg><use href="#svg-menu"></use></svg></i>
+      </label>
+    </div>
+    <div class="header-center">
+      <a href="../index.html"><div class="brand">GrimoireLab  documentation</div></a>
+    </div>
+    <div class="header-right">
+      <label class="toc-overlay-icon toc-header-icon" for="__toc">
+        <i class="icon"><svg><use href="#svg-toc"></use></svg></i>
+      </label>
+    </div>
+  </header>
+  <aside class="sidebar-drawer">
+    <div class="sidebar-container">
+      
+      <div class="sidebar-sticky"><a class="sidebar-brand" href="../index.html">
+  
+  
+  <span class="sidebar-brand-text">GrimoireLab  documentation</span>
+  
+</a><form class="sidebar-search-container" method="get" action="../search.html">
+  <input class="sidebar-search" placeholder=Search name="q">
+  <input type="hidden" name="check_keywords" value="yes">
+  <input type="hidden" name="area" value="default">
+</form><div class="sidebar-scroll"><div class="sidebar-tree">
+  <p class="caption"><span class="caption-text">Contents:</span></p>
+<ul class="current">
+<li class="toctree-l1 current current-page"><a class="current reference internal" href="#">How to setup SortingHat</a></li>
+</ul>
+
+</div>
+</div>
+      </div>
+      
+    </div>
+  </aside>
+  <main class="main">
+    <div class="content">
+      <article role="main">
+        <label class="toc-overlay-icon toc-content-icon" for="__toc">
+          <i class="icon"><svg><use href="#svg-toc"></use></svg></i>
+        </label>
+        <section class="tex2jax_ignore mathjax_ignore" id="how-to-setup-sortinghat">
+<h1>How to setup SortingHat<a class="headerlink" href="#how-to-setup-sortinghat" title="Permalink to this headline">¶</a></h1>
+<section id="requirements">
+<h2>Requirements<a class="headerlink" href="#requirements" title="Permalink to this headline">¶</a></h2>
+<ul class="simple">
+<li><p>Python &gt;= 3.6</p></li>
+<li><p>Poetry &gt;= 1.1.0</p></li>
+<li><p>MySQL &gt;= 5.7 or MariaDB 10.0</p></li>
+<li><p>Django = 3.1</p></li>
+<li><p>Graphene-Django &gt;= 2.0</p></li>
+<li><p>uWSGI &gt;= 2.0</p></li>
+</ul>
+<p>You will also need some other libraries for running the tool, you can find the
+whole list of dependencies in <a class="reference external" href="https://github.com/chaoss/grimoirelab-sortinghat/blob/muggle/pyproject.toml">pyproject.toml</a> file.</p>
+</section>
+<section id="installation">
+<h2>Installation<a class="headerlink" href="#installation" title="Permalink to this headline">¶</a></h2>
+<section id="getting-the-source-code">
+<h3>Getting the source code<a class="headerlink" href="#getting-the-source-code" title="Permalink to this headline">¶</a></h3>
+<p>Clone the repository, and change to the <code class="docutils literal notranslate"><span class="pre">muggle</span></code> branch</p>
+<div class="highlight-default notranslate"><div class="highlight"><pre><span></span>$ git clone https://github.com/chaoss/grimoirelab-sortinghat
+$ git checkout muggle
+</pre></div>
+</div>
+</section>
+<section id="backend">
+<h3>Backend<a class="headerlink" href="#backend" title="Permalink to this headline">¶</a></h3>
+<section id="prerequisites">
+<h4>Prerequisites<a class="headerlink" href="#prerequisites" title="Permalink to this headline">¶</a></h4>
+<section id="poetry">
+<h5>Poetry<a class="headerlink" href="#poetry" title="Permalink to this headline">¶</a></h5>
+<p>We use <a class="reference external" href="https://python-poetry.org/docs/">Poetry</a> for managing the project.
+You can install it following <a class="reference external" href="https://python-poetry.org/docs/#installation">these steps</a>.</p>
+</section>
+<section id="mysql-config">
+<h5>mysql_config<a class="headerlink" href="#mysql-config" title="Permalink to this headline">¶</a></h5>
+<p>Before you install SortingHat tool you might need to install <code class="docutils literal notranslate"><span class="pre">mysql_config</span></code>
+command. If you are using a Debian based distribution, this command can be
+found either in <code class="docutils literal notranslate"><span class="pre">libmysqlclient-dev</span></code> or <code class="docutils literal notranslate"><span class="pre">libmariadbclient-dev</span></code> packages
+(depending on if you are using MySQL or MariaDB database server). You can
+install these packages in your system with the next commands:</p>
+<ul class="simple">
+<li><p><strong>MySQL</strong></p></li>
+</ul>
+<div class="highlight-default notranslate"><div class="highlight"><pre><span></span>$ apt install libmysqlclient-dev
+</pre></div>
+</div>
+<ul class="simple">
+<li><p><strong>MariaDB</strong></p></li>
+</ul>
+<div class="highlight-default notranslate"><div class="highlight"><pre><span></span>$ apt install libmariadbclient-dev
+</pre></div>
+</div>
+</section>
+</section>
+<section id="installation-and-configuration">
+<h4>Installation and configuration<a class="headerlink" href="#installation-and-configuration" title="Permalink to this headline">¶</a></h4>
+<p>Install the required dependencies (this will also create a virtual environment).</p>
+<div class="highlight-default notranslate"><div class="highlight"><pre><span></span>$ poetry install
+</pre></div>
+</div>
+<p>Activate the virtual environment:</p>
+<div class="highlight-default notranslate"><div class="highlight"><pre><span></span>$ poetry shell
+</pre></div>
+</div>
+<p>Migrations, fixtures and create a superuser:</p>
+<div class="highlight-default notranslate"><div class="highlight"><pre><span></span>(.venv)$ ./manage.py makemigrations --settings=config.settings.devel
+(.venv)$ ./manage.py migrate --settings=config.settings.devel
+(.venv)$ ./manage.py loaddata sortinghat/core/fixtures/countries.json --settings=config.settings.devel
+(.venv)$ ./manage.py createsuperuser --settings=config.settings.devel
+</pre></div>
+</div>
+</section>
+<section id="running-the-backend">
+<h4>Running the backend<a class="headerlink" href="#running-the-backend" title="Permalink to this headline">¶</a></h4>
+<p>Run SortingHat backend Django app:</p>
+<div class="highlight-default notranslate"><div class="highlight"><pre><span></span>(.venv)$ ./manage.py runserver --settings=config.settings.devel
+</pre></div>
+</div>
+</section>
+</section>
+<section id="frontend">
+<h3>Frontend<a class="headerlink" href="#frontend" title="Permalink to this headline">¶</a></h3>
+<section id="id1">
+<h4>Prerequisites<a class="headerlink" href="#id1" title="Permalink to this headline">¶</a></h4>
+<section id="yarn">
+<h5>yarn<a class="headerlink" href="#yarn" title="Permalink to this headline">¶</a></h5>
+<p>To compile and run the frontend you will need to install <code class="docutils literal notranslate"><span class="pre">yarn</span></code> first.
+The latest versions of <code class="docutils literal notranslate"><span class="pre">yarn</span></code> can only be installed with <code class="docutils literal notranslate"><span class="pre">npm</span></code> - which
+is distributed with <a class="reference external" href="https://nodejs.org/en/download/">NodeJS</a>.</p>
+<p>When you have <code class="docutils literal notranslate"><span class="pre">npm</span></code> installed, then run the next command to install <code class="docutils literal notranslate"><span class="pre">yarn</span></code>
+on the system:</p>
+<div class="highlight-default notranslate"><div class="highlight"><pre><span></span><span class="n">npm</span> <span class="n">install</span> <span class="o">-</span><span class="n">g</span> <span class="n">yarn</span>
+</pre></div>
+</div>
+<p>Check the <a class="reference external" href="https://yarnpkg.com/getting-started">official documentation</a>
+for more information.</p>
+</section>
+</section>
+<section id="id2">
+<h4>Installation and configuration<a class="headerlink" href="#id2" title="Permalink to this headline">¶</a></h4>
+<p>Install the required dependencies</p>
+<div class="highlight-default notranslate"><div class="highlight"><pre><span></span>$ cd ui/
+$ yarn install
+</pre></div>
+</div>
+</section>
+<section id="running-the-frontend">
+<h4>Running the frontend<a class="headerlink" href="#running-the-frontend" title="Permalink to this headline">¶</a></h4>
+<p>Run SortingHat frontend Vue app:</p>
+<div class="highlight-default notranslate"><div class="highlight"><pre><span></span>$ yarn serve
+</pre></div>
+</div>
+</section>
+</section>
+</section>
+<section id="sortinghat-service">
+<h2>SortingHat service<a class="headerlink" href="#sortinghat-service" title="Permalink to this headline">¶</a></h2>
+<p>Starting at version 0.8, SortingHat is released with a server app. The server has two
+modes, <code class="docutils literal notranslate"><span class="pre">production</span></code> and <code class="docutils literal notranslate"><span class="pre">development</span></code>.</p>
+<p>When <code class="docutils literal notranslate"><span class="pre">production</span></code> mode is active, a WSGI app is served. The idea is to use a reverse
+proxy like NGINX or similar, that will be connected with the WSGI app to provide
+an interface HTTP.</p>
+<p>When <code class="docutils literal notranslate"><span class="pre">development</span></code> mode is active, an HTTP server is launched, so you can interact
+directly with SortingHat using HTTP requests. Take into account this mode is not
+suitable nor safe for production.</p>
+<p>You will need a django configuration file to run the service. You can use and modify
+one of the ones stored in <code class="docutils literal notranslate"><span class="pre">config/settings</span></code> folder. The file must be accessible
+via <code class="docutils literal notranslate"><span class="pre">PYTHONPATH</span></code> env variable. For the next examples, we will use <code class="docutils literal notranslate"><span class="pre">devel.py</span></code> file.</p>
+<p>In order to run the service for the first time, you need to execute the next commands:</p>
+<p>Build the UI interface:</p>
+<div class="highlight-default notranslate"><div class="highlight"><pre><span></span>$ cd ui
+$ yarn build
+</pre></div>
+</div>
+<p>Copy the static files to the location where they will be served (<code class="docutils literal notranslate"><span class="pre">STATIC_ROOT</span></code> var):</p>
+<div class="highlight-default notranslate"><div class="highlight"><pre><span></span>$ ./manage.py collectstatic --settings=config.settings.devel
+</pre></div>
+</div>
+<p>Run the server (use <code class="docutils literal notranslate"><span class="pre">--dev</span></code> flag for <code class="docutils literal notranslate"><span class="pre">development</span></code> mode):</p>
+<div class="highlight-default notranslate"><div class="highlight"><pre><span></span>$ sortinghatd --config config.settings.devel
+</pre></div>
+</div>
+<p>By default, this runs a WSGI server in <code class="docutils literal notranslate"><span class="pre">127.0.0.1:6314</span></code>. The <code class="docutils literal notranslate"><span class="pre">--dev</span></code> flag runs
+a server in <code class="docutils literal notranslate"><span class="pre">127.0.0.1:8000</span></code>.</p>
+</section>
+<section id="compatibility-between-versions">
+<h2>Compatibility between versions<a class="headerlink" href="#compatibility-between-versions" title="Permalink to this headline">¶</a></h2>
+<p>SortingHat 0.7.x is not longer supported. Any database using this version will not work.</p>
+<p>SortingHat databases 0.7.x are no longer compatible. The <code class="docutils literal notranslate"><span class="pre">uidentities</span></code> table was renamed
+to <code class="docutils literal notranslate"><span class="pre">individuals</span></code>. The database schema changed in all tables to add the fields <code class="docutils literal notranslate"><span class="pre">created_at</span></code>
+and <code class="docutils literal notranslate"><span class="pre">last_modified</span></code>. Also in <code class="docutils literal notranslate"><span class="pre">domains</span></code>, <code class="docutils literal notranslate"><span class="pre">enrollments</span></code>, <code class="docutils literal notranslate"><span class="pre">identities</span></code>, <code class="docutils literal notranslate"><span class="pre">profiles</span></code> tables,
+there are some specific changes to the column names:</p>
+<ul class="simple">
+<li><p><code class="docutils literal notranslate"><span class="pre">domains</span></code></p>
+<ul>
+<li><p><code class="docutils literal notranslate"><span class="pre">organization_id</span></code> to <code class="docutils literal notranslate"><span class="pre">organization</span></code></p></li>
+</ul>
+</li>
+<li><p><code class="docutils literal notranslate"><span class="pre">enrollments</span></code></p>
+<ul>
+<li><p><code class="docutils literal notranslate"><span class="pre">organization_id</span></code> to <code class="docutils literal notranslate"><span class="pre">organization</span></code></p></li>
+<li><p><code class="docutils literal notranslate"><span class="pre">uuid</span></code> to <code class="docutils literal notranslate"><span class="pre">individual</span></code></p></li>
+</ul>
+</li>
+<li><p><code class="docutils literal notranslate"><span class="pre">identities</span></code></p>
+<ul>
+<li><p><code class="docutils literal notranslate"><span class="pre">uuid</span></code> to <code class="docutils literal notranslate"><span class="pre">individual</span></code></p></li>
+</ul>
+</li>
+<li><p><code class="docutils literal notranslate"><span class="pre">profiles</span></code></p>
+<ul>
+<li><p><code class="docutils literal notranslate"><span class="pre">country_code</span></code> to <code class="docutils literal notranslate"><span class="pre">country</span></code></p></li>
+<li><p><code class="docutils literal notranslate"><span class="pre">uuid</span></code> to <code class="docutils literal notranslate"><span class="pre">individual</span></code></p></li>
+</ul>
+</li>
+</ul>
+<p>Please update your database following the next steps:</p>
+<ol>
+<li><p>Use the script <code class="docutils literal notranslate"><span class="pre">utils/create_sh_0_7_fixture.py</span></code> to create the fixture
+JSON file</p>
+<div class="highlight-default notranslate"><div class="highlight"><pre><span></span>$ python3 utils/create_sh_0_7_fixture.py test_sh -o test_sh_fixture.json
+[2021-06-10 17:29:11,461][INFO] Start creating fixture file for test_sh
+[2021-06-10 17:29:21,252][INFO] Fixture file created to test_sh_fixture.json
+</pre></div>
+</div>
+</li>
+<li><p>Create a new database.</p>
+<div class="highlight-default notranslate"><div class="highlight"><pre><span></span><span class="n">mysql</span><span class="o">&gt;</span> <span class="n">CREATE</span> <span class="n">DATABASE</span> <span class="n">new_sh</span> <span class="n">CHARACTER</span> <span class="n">SET</span> <span class="n">utf8mb4</span> <span class="n">COLLATE</span> <span class="n">utf8mb4_unicode_520_ci</span><span class="p">;</span>
+</pre></div>
+</div>
+</li>
+<li><p>Execute Django migrate.</p>
+<div class="highlight-default notranslate"><div class="highlight"><pre><span></span>$ python3 manage.py migrate --settings=config.settings.devel
+</pre></div>
+</div>
+</li>
+<li><p>Load fixture JSON file using Django</p>
+<div class="highlight-default notranslate"><div class="highlight"><pre><span></span>$ python3 manage.py loaddata test_sh_fixture.json --settings=config.settings.devel
+Installed 148542 object(s) from 1 fixture(s)
+</pre></div>
+</div>
+</li>
+</ol>
+</section>
+<section id="running-tests">
+<h2>Running tests<a class="headerlink" href="#running-tests" title="Permalink to this headline">¶</a></h2>
+<p>SortingHat comes with a comprehensive list of unit tests for both
+frontend and backend.</p>
+<section id="backend-test-suite">
+<h3>Backend test suite<a class="headerlink" href="#backend-test-suite" title="Permalink to this headline">¶</a></h3>
+<div class="highlight-default notranslate"><div class="highlight"><pre><span></span>(.venv)$ ./manage.py test --settings=config.settings.testing
+</pre></div>
+</div>
+</section>
+<section id="frontend-test-suite">
+<h3>Frontend test suite<a class="headerlink" href="#frontend-test-suite" title="Permalink to this headline">¶</a></h3>
+<div class="highlight-default notranslate"><div class="highlight"><pre><span></span>$ cd ui/
+$ yarn test:unit
+</pre></div>
+</div>
+</section>
+</section>
+</section>
+
+      </article>
+      <footer>
+        
+        <div class="related-pages">
+          
+          <a class="prev-page" href="../index.html">
+              <svg><use href="#svg-arrow-right"></use></svg>
+              <div class="page-info">
+                <div class="context">
+                  <span>Previous</span>
+                </div>
+                
+                <div class="title">Home</div>
+                
+              </div>
+            </a>
+        </div>
+
+        <div class="related-information">
+              Copyright &#169; 2021, Veerasamy Sevagen
+            |
+            Built with <a href="https://www.sphinx-doc.org/">Sphinx</a>
+              and
+              <a class="muted-link" href="https://pradyunsg.me">@pradyunsg</a>'s
+              <a href="https://github.com/pradyunsg/furo">Furo theme</a>.
+            |
+            <a class="muted-link" href="../_sources/sortinghat/sortinghat.md.txt"
+               rel="nofollow">
+              Show Source
+            </a>
+        </div>
+        
+      </footer>
+    </div>
+    <aside class="toc-drawer">
+      
+      
+      <div class="toc-sticky toc-scroll">
+        <div class="toc-title-container">
+          <span class="toc-title">
+            Contents
+          </span>
+        </div>
+        <div class="toc-tree-container">
+          <div class="toc-tree">
+            <ul>
+<li><a class="reference internal" href="#">How to setup SortingHat</a><ul>
+<li><a class="reference internal" href="#requirements">Requirements</a></li>
+<li><a class="reference internal" href="#installation">Installation</a><ul>
+<li><a class="reference internal" href="#getting-the-source-code">Getting the source code</a></li>
+<li><a class="reference internal" href="#backend">Backend</a><ul>
+<li><a class="reference internal" href="#prerequisites">Prerequisites</a><ul>
+<li><a class="reference internal" href="#poetry">Poetry</a></li>
+<li><a class="reference internal" href="#mysql-config">mysql_config</a></li>
+</ul>
+</li>
+<li><a class="reference internal" href="#installation-and-configuration">Installation and configuration</a></li>
+<li><a class="reference internal" href="#running-the-backend">Running the backend</a></li>
+</ul>
+</li>
+<li><a class="reference internal" href="#frontend">Frontend</a><ul>
+<li><a class="reference internal" href="#id1">Prerequisites</a><ul>
+<li><a class="reference internal" href="#yarn">yarn</a></li>
+</ul>
+</li>
+<li><a class="reference internal" href="#id2">Installation and configuration</a></li>
+<li><a class="reference internal" href="#running-the-frontend">Running the frontend</a></li>
+</ul>
+</li>
+</ul>
+</li>
+<li><a class="reference internal" href="#sortinghat-service">SortingHat service</a></li>
+<li><a class="reference internal" href="#compatibility-between-versions">Compatibility between versions</a></li>
+<li><a class="reference internal" href="#running-tests">Running tests</a><ul>
+<li><a class="reference internal" href="#backend-test-suite">Backend test suite</a></li>
+<li><a class="reference internal" href="#frontend-test-suite">Frontend test suite</a></li>
+</ul>
+</li>
+</ul>
+</li>
+</ul>
+
+          </div>
+        </div>
+      </div>
+      
+      
+    </aside>
+  </main>
+</div><script data-url_root="../" id="documentation_options" src="../_static/documentation_options.js"></script>
+    <script src="../_static/jquery.js"></script>
+    <script src="../_static/underscore.js"></script>
+    <script src="../_static/doctools.js"></script>
+    <script src="../_static/scripts/main.js"></script>
+    </body>
+</html>

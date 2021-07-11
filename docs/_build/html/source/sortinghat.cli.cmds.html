@@ -1,0 +1,275 @@
+<!doctype html>
+<html class="no-js">
+  <head><meta charset="utf-8"/>
+    <meta name="viewport" content="width=device-width,initial-scale=1"/>
+    <meta name="color-scheme" content="light dark"><meta name="generator" content="Docutils 0.17.1: http://docutils.sourceforge.net/" />
+<link rel="author" title="About these documents" href="../about.html" /><link rel="index" title="Index" href="../genindex.html" /><link rel="search" title="Search" href="../search.html" />
+
+    <meta name="generator" content="sphinx-4.0.3, furo 2021.07.05.beta38"/>
+        <title>sortinghat.cli.cmds package - GrimoireLab Guide</title>
+      <link rel="stylesheet" type="text/css" href="../_static/pygments.css" />
+    <link rel="stylesheet" type="text/css" href="../_static/styles/furo.css" />
+    <link rel="stylesheet" type="text/css" href="../_static/styles/furo-extensions.css" />
+    
+
+
+<style>
+  :root {
+    --color-code-background: #f8f8f8;
+  --color-code-foreground: black;
+  --font-stack: system-ui,-apple-system,BlinkMacSystemFont,Segoe UI,Roboto,Helvetica Neue,Arial,sans-serif;
+  --font-stack--monospace: Courier, monospace;
+  
+  }
+  @media (prefers-color-scheme: dark) {
+    :root {
+      --color-code-background: #202020;
+  --color-code-foreground: #d0d0d0;
+  
+    }
+  }
+
+  /* For allowing end-user-specific overrides */
+  .override-light {
+    --color-code-background: #f8f8f8;
+  --color-code-foreground: black;
+  --font-stack: system-ui,-apple-system,BlinkMacSystemFont,Segoe UI,Roboto,Helvetica Neue,Arial,sans-serif;
+  --font-stack--monospace: Courier, monospace;
+  
+  }
+  .override-dark {
+    --color-code-background: #202020;
+  --color-code-foreground: #d0d0d0;
+  
+  }
+</style><link media="(prefers-color-scheme: dark)" rel="stylesheet" href="../_static/pygments_dark.css"></head>
+  <body dir="">
+    
+<svg xmlns="http://www.w3.org/2000/svg" style="display: none;">
+  <symbol id="svg-toc" viewBox="0 0 24 24">
+    <title>Contents</title>
+    <svg xmlns="http://www.w3.org/2000/svg" width="24" height="24" viewBox="0 0 24 24" fill="none"
+      stroke-width="1.5" stroke="currentColor" stroke-linecap="round" stroke-linejoin="round">
+      <path stroke="none" d="M0 0h24v24H0z"/>
+      <line x1="4" y1="6" x2="20" y2="6" />
+      <line x1="10" y1="12" x2="20" y2="12" />
+      <line x1="6" y1="18" x2="20" y2="18" />
+    </svg>
+  </symbol>
+  <symbol id="svg-menu" viewBox="0 0 24 24">
+    <title>Menu</title>
+    <svg xmlns="http://www.w3.org/2000/svg" width="24" height="24" viewBox="0 0 24 24" fill="none"
+      stroke="currentColor" stroke-width="2" stroke-linecap="round" stroke-linejoin="round"
+      class="feather feather-menu">
+      <line x1="3" y1="12" x2="21" y2="12"></line>
+      <line x1="3" y1="6" x2="21" y2="6"></line>
+      <line x1="3" y1="18" x2="21" y2="18"></line>
+    </svg>
+  </symbol>
+  <symbol id="svg-arrow-right" viewBox="0 0 24 24">
+    <title>Expand</title>
+    <svg xmlns="http://www.w3.org/2000/svg" width="24" height="24" viewBox="0 0 24 24" fill="none"
+      stroke="currentColor" stroke-width="2" stroke-linecap="round" stroke-linejoin="round"
+      class="feather feather-chevron-right">
+      <polyline points="9 18 15 12 9 6"></polyline>
+    </svg>
+  </symbol>
+</svg>
+
+<input type="checkbox" class="sidebar-toggle" name="__navigation" id="__navigation">
+<input type="checkbox" class="sidebar-toggle" name="__toc" id="__toc">
+<label class="overlay sidebar-overlay" for="__navigation"></label>
+<label class="overlay toc-overlay" for="__toc"></label>
+
+
+
+<div class="page">
+  <header class="mobile-header">
+    <div class="header-left">
+      <label class="nav-overlay-icon" for="__navigation">
+        <i class="icon"><svg><use href="#svg-menu"></use></svg></i>
+      </label>
+    </div>
+    <div class="header-center">
+      <a href="../index.html"><div class="brand">GrimoireLab Guide</div></a>
+    </div>
+    <div class="header-right">
+      <label class="toc-overlay-icon toc-header-icon" for="__toc">
+        <i class="icon"><svg><use href="#svg-toc"></use></svg></i>
+      </label>
+    </div>
+  </header>
+  <aside class="sidebar-drawer">
+    <div class="sidebar-container">
+      
+      <div class="sidebar-sticky"><a class="sidebar-brand" href="../index.html">
+  
+  
+  <span class="sidebar-brand-text">GrimoireLab Guide</span>
+  
+</a><form class="sidebar-search-container" method="get" action="../search.html">
+  <input class="sidebar-search" placeholder=Search name="q">
+  <input type="hidden" name="check_keywords" value="yes">
+  <input type="hidden" name="area" value="default">
+</form><div class="sidebar-scroll"><div class="sidebar-tree">
+  <p class="caption"><span class="caption-text">About:</span></p>
+<ul>
+<li class="toctree-l1"><a class="reference internal" href="../about.html">About</a></li>
+</ul>
+<p class="caption"><span class="caption-text">Sortinghat:</span></p>
+<ul>
+<li class="toctree-l1"><a class="reference internal" href="../sortinghat/index.html">Sortinghat</a></li>
+<li class="toctree-l1"><a class="reference internal" href="../sortinghat/profile.html">Profiles &amp; Identities</a></li>
+<li class="toctree-l1"><a class="reference internal" href="../sortinghat/database.html">Database</a></li>
+<li class="toctree-l1"><a class="reference internal" href="../sortinghat/setup.html">Setup Sortinghat</a></li>
+<li class="toctree-l1"><a class="reference internal" href="../sortinghat/interface.html">SortingHat's interface</a></li>
+<li class="toctree-l1"><a class="reference internal" href="../sortinghat/create-profile.html">Creating profiles</a></li>
+<li class="toctree-l1"><a class="reference internal" href="../sortinghat/remove-profile.html">Removing profiles</a></li>
+<li class="toctree-l1"><a class="reference internal" href="../sortinghat/merging-profile.html">Merging profiles</a></li>
+<li class="toctree-l1"><a class="reference internal" href="../sortinghat/edit-profile.html">Editing profiles</a></li>
+<li class="toctree-l1"><a class="reference internal" href="../sortinghat/add-org.html">Add/Edit Orgs</a></li>
+<li class="toctree-l1"><a class="reference internal" href="../sortinghat/delete-orgs.html">Delete Orgs</a></li>
+<li class="toctree-l1"><a class="reference internal" href="../sortinghat/unmerge-profiles.html">Un-merge profiles</a></li>
+<li class="toctree-l1"><a class="reference internal" href="../sortinghat/additional.html">Whats more...</a></li>
+<li class="toctree-l1"><a class="reference internal" href="../sortinghat/troubleshoot.html">Troubleshoot</a></li>
+</ul>
+
+</div>
+</div>
+      </div>
+      
+    </div>
+  </aside>
+  <main class="main">
+    <div class="content">
+      <article role="main">
+        <label class="toc-overlay-icon toc-content-icon" for="__toc">
+          <i class="icon"><svg><use href="#svg-toc"></use></svg></i>
+        </label>
+        <section id="sortinghat-cli-cmds-package">
+<h1>sortinghat.cli.cmds package<a class="headerlink" href="#sortinghat-cli-cmds-package" title="Permalink to this headline">¶</a></h1>
+<section id="submodules">
+<h2>Submodules<a class="headerlink" href="#submodules" title="Permalink to this headline">¶</a></h2>
+</section>
+<section id="module-sortinghat.cli.cmds.add">
+<span id="sortinghat-cli-cmds-add-module"></span><h2>sortinghat.cli.cmds.add module<a class="headerlink" href="#module-sortinghat.cli.cmds.add" title="Permalink to this headline">¶</a></h2>
+</section>
+<section id="module-sortinghat.cli.cmds.config">
+<span id="sortinghat-cli-cmds-config-module"></span><h2>sortinghat.cli.cmds.config module<a class="headerlink" href="#module-sortinghat.cli.cmds.config" title="Permalink to this headline">¶</a></h2>
+</section>
+<section id="module-sortinghat.cli.cmds.countries">
+<span id="sortinghat-cli-cmds-countries-module"></span><h2>sortinghat.cli.cmds.countries module<a class="headerlink" href="#module-sortinghat.cli.cmds.countries" title="Permalink to this headline">¶</a></h2>
+<dl class="py function">
+<dt class="sig sig-object py" id="sortinghat.cli.cmds.countries.validate_code">
+<span class="sig-prename descclassname"><span class="pre">sortinghat.cli.cmds.countries.</span></span><span class="sig-name descname"><span class="pre">validate_code</span></span><span class="sig-paren">(</span><em class="sig-param"><span class="n"><span class="pre">ctx</span></span></em>, <em class="sig-param"><span class="n"><span class="pre">param</span></span></em>, <em class="sig-param"><span class="n"><span class="pre">value</span></span></em><span class="sig-paren">)</span><a class="reference internal" href="../_modules/sortinghat/cli/cmds/countries.html#validate_code"><span class="viewcode-link"><span class="pre">[source]</span></span></a><a class="headerlink" href="#sortinghat.cli.cmds.countries.validate_code" title="Permalink to this definition">¶</a></dt>
+<dd></dd></dl>
+<dl class="py function">
+<dt class="sig sig-object py" id="sortinghat.cli.cmds.countries.validate_term">
+<span class="sig-prename descclassname"><span class="pre">sortinghat.cli.cmds.countries.</span></span><span class="sig-name descname"><span class="pre">validate_term</span></span><span class="sig-paren">(</span><em class="sig-param"><span class="n"><span class="pre">ctx</span></span></em>, <em class="sig-param"><span class="n"><span class="pre">param</span></span></em>, <em class="sig-param"><span class="n"><span class="pre">value</span></span></em><span class="sig-paren">)</span><a class="reference internal" href="../_modules/sortinghat/cli/cmds/countries.html#validate_term"><span class="viewcode-link"><span class="pre">[source]</span></span></a><a class="headerlink" href="#sortinghat.cli.cmds.countries.validate_term" title="Permalink to this definition">¶</a></dt>
+<dd></dd></dl>
+</section>
+<section id="module-sortinghat.cli.cmds.enroll">
+<span id="sortinghat-cli-cmds-enroll-module"></span><h2>sortinghat.cli.cmds.enroll module<a class="headerlink" href="#module-sortinghat.cli.cmds.enroll" title="Permalink to this headline">¶</a></h2>
+</section>
+<section id="module-sortinghat.cli.cmds.lock">
+<span id="sortinghat-cli-cmds-lock-module"></span><h2>sortinghat.cli.cmds.lock module<a class="headerlink" href="#module-sortinghat.cli.cmds.lock" title="Permalink to this headline">¶</a></h2>
+</section>
+<section id="module-sortinghat.cli.cmds.merge">
+<span id="sortinghat-cli-cmds-merge-module"></span><h2>sortinghat.cli.cmds.merge module<a class="headerlink" href="#module-sortinghat.cli.cmds.merge" title="Permalink to this headline">¶</a></h2>
+</section>
+<section id="module-sortinghat.cli.cmds.mv">
+<span id="sortinghat-cli-cmds-mv-module"></span><h2>sortinghat.cli.cmds.mv module<a class="headerlink" href="#module-sortinghat.cli.cmds.mv" title="Permalink to this headline">¶</a></h2>
+</section>
+<section id="module-sortinghat.cli.cmds.orgs">
+<span id="sortinghat-cli-cmds-orgs-module"></span><h2>sortinghat.cli.cmds.orgs module<a class="headerlink" href="#module-sortinghat.cli.cmds.orgs" title="Permalink to this headline">¶</a></h2>
+</section>
+<section id="module-sortinghat.cli.cmds.profile">
+<span id="sortinghat-cli-cmds-profile-module"></span><h2>sortinghat.cli.cmds.profile module<a class="headerlink" href="#module-sortinghat.cli.cmds.profile" title="Permalink to this headline">¶</a></h2>
+</section>
+<section id="module-sortinghat.cli.cmds.rm">
+<span id="sortinghat-cli-cmds-rm-module"></span><h2>sortinghat.cli.cmds.rm module<a class="headerlink" href="#module-sortinghat.cli.cmds.rm" title="Permalink to this headline">¶</a></h2>
+</section>
+<section id="module-sortinghat.cli.cmds.show">
+<span id="sortinghat-cli-cmds-show-module"></span><h2>sortinghat.cli.cmds.show module<a class="headerlink" href="#module-sortinghat.cli.cmds.show" title="Permalink to this headline">¶</a></h2>
+</section>
+<section id="module-sortinghat.cli.cmds.split">
+<span id="sortinghat-cli-cmds-split-module"></span><h2>sortinghat.cli.cmds.split module<a class="headerlink" href="#module-sortinghat.cli.cmds.split" title="Permalink to this headline">¶</a></h2>
+</section>
+<section id="module-sortinghat.cli.cmds.withdraw">
+<span id="sortinghat-cli-cmds-withdraw-module"></span><h2>sortinghat.cli.cmds.withdraw module<a class="headerlink" href="#module-sortinghat.cli.cmds.withdraw" title="Permalink to this headline">¶</a></h2>
+</section>
+<section id="module-sortinghat.cli.cmds">
+<span id="module-contents"></span><h2>Module contents<a class="headerlink" href="#module-sortinghat.cli.cmds" title="Permalink to this headline">¶</a></h2>
+</section>
+</section>
+
+      </article>
+      <footer>
+        
+        <div class="related-pages">
+          
+          
+        </div>
+
+        <div class="related-information">
+              Copyright &#169; 2021, Veerasamy Sevagen
+            |
+            Built with <a href="https://www.sphinx-doc.org/">Sphinx</a>
+              and
+              <a class="muted-link" href="https://pradyunsg.me">@pradyunsg</a>'s
+              <a href="https://github.com/pradyunsg/furo">Furo theme</a>.
+            |
+            <a class="muted-link" href="../_sources/source/sortinghat.cli.cmds.rst.txt"
+               rel="nofollow">
+              Show Source
+            </a>
+        </div>
+        
+      </footer>
+    </div>
+    <aside class="toc-drawer">
+      
+      
+      <div class="toc-sticky toc-scroll">
+        <div class="toc-title-container">
+          <span class="toc-title">
+            Contents
+          </span>
+        </div>
+        <div class="toc-tree-container">
+          <div class="toc-tree">
+            <ul>
+<li><a class="reference internal" href="#">sortinghat.cli.cmds package</a><ul>
+<li><a class="reference internal" href="#submodules">Submodules</a></li>
+<li><a class="reference internal" href="#module-sortinghat.cli.cmds.add">sortinghat.cli.cmds.add module</a></li>
+<li><a class="reference internal" href="#module-sortinghat.cli.cmds.config">sortinghat.cli.cmds.config module</a></li>
+<li><a class="reference internal" href="#module-sortinghat.cli.cmds.countries">sortinghat.cli.cmds.countries module</a></li>
+<li><a class="reference internal" href="#module-sortinghat.cli.cmds.enroll">sortinghat.cli.cmds.enroll module</a></li>
+<li><a class="reference internal" href="#module-sortinghat.cli.cmds.lock">sortinghat.cli.cmds.lock module</a></li>
+<li><a class="reference internal" href="#module-sortinghat.cli.cmds.merge">sortinghat.cli.cmds.merge module</a></li>
+<li><a class="reference internal" href="#module-sortinghat.cli.cmds.mv">sortinghat.cli.cmds.mv module</a></li>
+<li><a class="reference internal" href="#module-sortinghat.cli.cmds.orgs">sortinghat.cli.cmds.orgs module</a></li>
+<li><a class="reference internal" href="#module-sortinghat.cli.cmds.profile">sortinghat.cli.cmds.profile module</a></li>
+<li><a class="reference internal" href="#module-sortinghat.cli.cmds.rm">sortinghat.cli.cmds.rm module</a></li>
+<li><a class="reference internal" href="#module-sortinghat.cli.cmds.show">sortinghat.cli.cmds.show module</a></li>
+<li><a class="reference internal" href="#module-sortinghat.cli.cmds.split">sortinghat.cli.cmds.split module</a></li>
+<li><a class="reference internal" href="#module-sortinghat.cli.cmds.withdraw">sortinghat.cli.cmds.withdraw module</a></li>
+<li><a class="reference internal" href="#module-sortinghat.cli.cmds">Module contents</a></li>
+</ul>
+</li>
+</ul>
+
+          </div>
+        </div>
+      </div>
+      
+      
+    </aside>
+  </main>
+</div><script data-url_root="../" id="documentation_options" src="../_static/documentation_options.js"></script>
+    <script src="../_static/jquery.js"></script>
+    <script src="../_static/underscore.js"></script>
+    <script src="../_static/doctools.js"></script>
+    <script src="../_static/scripts/main.js"></script>
+    </body>
+</html>

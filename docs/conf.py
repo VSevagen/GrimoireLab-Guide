@@ -14,10 +14,7 @@ import os
 import sys
 sys.path.insert(0, os.path.abspath('..'))
 sys.path.insert(0, os.path.abspath('../sortinghat'))
-sys.path.insert(0, os.path.abspath('../sortinghat/core'))
-sys.path.insert(0, os.path.abspath('../sortinghat/core/recommedations'))
-os.system("sphinx-apidoc -f -o source/ ../sortinghat/")
-os.system("sphinx-apidoc -f -o source/ ../sortinghat/core/recommendation/")
+os.system("sphinx-apidoc -f -o source/ ../")
 
 
 # -- Project information -----------------------------------------------------
@@ -45,9 +42,7 @@ extensions = [
 source_suffix = ['.rst', '.md']
 # Add any paths that contain templates here, relative to this directory.
 templates_path = ['_templates']
-# html_additional_pages = {
-#     "index": "index.html"
-# }
+
 # List of patterns, relative to source directory, that match files and
 # directories to ignore when looking for source files.
 # This pattern also affects html_static_path and html_extra_path.

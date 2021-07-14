@@ -162,7 +162,7 @@
 <li class="toctree-l2"><a class="reference internal" href="sortinghat.core.migrations.html#sortinghat-core-migrations-0007-rename-uuid-to-mk-module">sortinghat.core.migrations.0007_rename_uuid_to_mk module</a></li>
 <li class="toctree-l2"><a class="reference internal" href="sortinghat.core.migrations.html#sortinghat-core-migrations-0008-rename-id-to-uuid-module">sortinghat.core.migrations.0008_rename_id_to_uuid module</a></li>
 <li class="toctree-l2"><a class="reference internal" href="sortinghat.core.migrations.html#sortinghat-core-migrations-0009-replace-django-mysql-module">sortinghat.core.migrations.0009_replace_django_mysql module</a></li>
-<li class="toctree-l2"><a class="reference internal" href="sortinghat.core.migrations.html#module-contents">Module contents</a></li>
+<li class="toctree-l2"><a class="reference internal" href="sortinghat.core.migrations.html#module-sortinghat.core.migrations">Module contents</a></li>
 </ul>
 </li>
 <li class="toctree-l1"><a class="reference internal" href="sortinghat.core.recommendations.html">sortinghat.core.recommendations package</a><ul>
@@ -188,8 +188,23 @@
 <div class="section" id="sortinghat-core-apps-module">
 <h2>sortinghat.core.apps module<a class="headerlink" href="#sortinghat-core-apps-module" title="Permalink to this headline">¶</a></h2>
 </div>
-<div class="section" id="sortinghat-core-context-module">
-<h2>sortinghat.core.context module<a class="headerlink" href="#sortinghat-core-context-module" title="Permalink to this headline">¶</a></h2>
+<div class="section" id="module-sortinghat.core.context">
+<span id="sortinghat-core-context-module"></span><h2>sortinghat.core.context module<a class="headerlink" href="#module-sortinghat.core.context" title="Permalink to this headline">¶</a></h2>
+<dl class="py class">
+<dt class="sig sig-object py" id="sortinghat.core.context.SortingHatContext">
+<em class="property"><span class="pre">class</span> </em><span class="sig-prename descclassname"><span class="pre">sortinghat.core.context.</span></span><span class="sig-name descname"><span class="pre">SortingHatContext</span></span><span class="sig-paren">(</span><em class="sig-param"><span class="n"><span class="pre">user</span></span></em>, <em class="sig-param"><span class="n"><span class="pre">job_id</span></span></em><span class="sig-paren">)</span><a class="headerlink" href="#sortinghat.core.context.SortingHatContext" title="Permalink to this definition">¶</a></dt>
+<dd><p>Bases: <code class="xref py py-class docutils literal notranslate"><span class="pre">tuple</span></code></p>
+<dl class="py attribute">
+<dt class="sig sig-object py" id="sortinghat.core.context.SortingHatContext.job_id">
+<span class="sig-name descname"><span class="pre">job_id</span></span><a class="headerlink" href="#sortinghat.core.context.SortingHatContext.job_id" title="Permalink to this definition">¶</a></dt>
+<dd><p>Alias for field number 1</p>
+</dd></dl>
+<dl class="py attribute">
+<dt class="sig sig-object py" id="sortinghat.core.context.SortingHatContext.user">
+<span class="sig-name descname"><span class="pre">user</span></span><a class="headerlink" href="#sortinghat.core.context.SortingHatContext.user" title="Permalink to this definition">¶</a></dt>
+<dd><p>Alias for field number 0</p>
+</dd></dl>
+</dd></dl>
 </div>
 <div class="section" id="sortinghat-core-db-module">
 <h2>sortinghat.core.db module<a class="headerlink" href="#sortinghat-core-db-module" title="Permalink to this headline">¶</a></h2>
@@ -197,8 +212,150 @@
 <div class="section" id="sortinghat-core-decorators-module">
 <h2>sortinghat.core.decorators module<a class="headerlink" href="#sortinghat-core-decorators-module" title="Permalink to this headline">¶</a></h2>
 </div>
-<div class="section" id="sortinghat-core-errors-module">
-<h2>sortinghat.core.errors module<a class="headerlink" href="#sortinghat-core-errors-module" title="Permalink to this headline">¶</a></h2>
+<div class="section" id="module-sortinghat.core.errors">
+<span id="sortinghat-core-errors-module"></span><h2>sortinghat.core.errors module<a class="headerlink" href="#module-sortinghat.core.errors" title="Permalink to this headline">¶</a></h2>
+<dl class="py exception">
+<dt class="sig sig-object py" id="sortinghat.core.errors.AlreadyExistsError">
+<em class="property"><span class="pre">exception</span> </em><span class="sig-prename descclassname"><span class="pre">sortinghat.core.errors.</span></span><span class="sig-name descname"><span class="pre">AlreadyExistsError</span></span><span class="sig-paren">(</span><em class="sig-param"><span class="o"><span class="pre">**</span></span><span class="n"><span class="pre">kwargs</span></span></em><span class="sig-paren">)</span><a class="reference internal" href="../_modules/sortinghat/core/errors.html#AlreadyExistsError"><span class="viewcode-link"><span class="pre">[source]</span></span></a><a class="headerlink" href="#sortinghat.core.errors.AlreadyExistsError" title="Permalink to this definition">¶</a></dt>
+<dd><p>Bases: <a class="reference internal" href="#sortinghat.core.errors.BaseError" title="sortinghat.core.errors.BaseError"><code class="xref py py-class docutils literal notranslate"><span class="pre">sortinghat.core.errors.BaseError</span></code></a></p>
+<p>Exception raised when an entity already exists in the registry</p>
+<dl class="py attribute">
+<dt class="sig sig-object py" id="sortinghat.core.errors.AlreadyExistsError.code">
+<span class="sig-name descname"><span class="pre">code</span></span><em class="property"> <span class="pre">=</span> <span class="pre">2</span></em><a class="headerlink" href="#sortinghat.core.errors.AlreadyExistsError.code" title="Permalink to this definition">¶</a></dt>
+<dd></dd></dl>
+<dl class="py attribute">
+<dt class="sig sig-object py" id="sortinghat.core.errors.AlreadyExistsError.message">
+<span class="sig-name descname"><span class="pre">message</span></span><em class="property"> <span class="pre">=</span> <span class="pre">"%(entity)s</span> <span class="pre">'%(eid)s'</span> <span class="pre">already</span> <span class="pre">exists</span> <span class="pre">in</span> <span class="pre">the</span> <span class="pre">registry"</span></em><a class="headerlink" href="#sortinghat.core.errors.AlreadyExistsError.message" title="Permalink to this definition">¶</a></dt>
+<dd></dd></dl>
+</dd></dl>
+<dl class="py exception">
+<dt class="sig sig-object py" id="sortinghat.core.errors.BaseError">
+<em class="property"><span class="pre">exception</span> </em><span class="sig-prename descclassname"><span class="pre">sortinghat.core.errors.</span></span><span class="sig-name descname"><span class="pre">BaseError</span></span><span class="sig-paren">(</span><em class="sig-param"><span class="o"><span class="pre">**</span></span><span class="n"><span class="pre">kwargs</span></span></em><span class="sig-paren">)</span><a class="reference internal" href="../_modules/sortinghat/core/errors.html#BaseError"><span class="viewcode-link"><span class="pre">[source]</span></span></a><a class="headerlink" href="#sortinghat.core.errors.BaseError" title="Permalink to this definition">¶</a></dt>
+<dd><p>Bases: <code class="xref py py-class docutils literal notranslate"><span class="pre">Exception</span></code></p>
+<p>Base class error.</p>
+<p>Derived classes can overwrite error message declaring
+‘message’ property.</p>
+<dl class="py attribute">
+<dt class="sig sig-object py" id="sortinghat.core.errors.BaseError.code">
+<span class="sig-name descname"><span class="pre">code</span></span><em class="property"> <span class="pre">=</span> <span class="pre">1</span></em><a class="headerlink" href="#sortinghat.core.errors.BaseError.code" title="Permalink to this definition">¶</a></dt>
+<dd></dd></dl>
+<dl class="py attribute">
+<dt class="sig sig-object py" id="sortinghat.core.errors.BaseError.message">
+<span class="sig-name descname"><span class="pre">message</span></span><em class="property"> <span class="pre">=</span> <span class="pre">'SortingHat</span> <span class="pre">unknown</span> <span class="pre">error'</span></em><a class="headerlink" href="#sortinghat.core.errors.BaseError.message" title="Permalink to this definition">¶</a></dt>
+<dd></dd></dl>
+</dd></dl>
+<dl class="py exception">
+<dt class="sig sig-object py" id="sortinghat.core.errors.ClosedTransactionError">
+<em class="property"><span class="pre">exception</span> </em><span class="sig-prename descclassname"><span class="pre">sortinghat.core.errors.</span></span><span class="sig-name descname"><span class="pre">ClosedTransactionError</span></span><span class="sig-paren">(</span><em class="sig-param"><span class="o"><span class="pre">**</span></span><span class="n"><span class="pre">kwargs</span></span></em><span class="sig-paren">)</span><a class="reference internal" href="../_modules/sortinghat/core/errors.html#ClosedTransactionError"><span class="viewcode-link"><span class="pre">[source]</span></span></a><a class="headerlink" href="#sortinghat.core.errors.ClosedTransactionError" title="Permalink to this definition">¶</a></dt>
+<dd><p>Bases: <a class="reference internal" href="#sortinghat.core.errors.BaseError" title="sortinghat.core.errors.BaseError"><code class="xref py py-class docutils literal notranslate"><span class="pre">sortinghat.core.errors.BaseError</span></code></a></p>
+<p>Exception raised when performing a change on a closed transaction</p>
+<dl class="py attribute">
+<dt class="sig sig-object py" id="sortinghat.core.errors.ClosedTransactionError.code">
+<span class="sig-name descname"><span class="pre">code</span></span><em class="property"> <span class="pre">=</span> <span class="pre">12</span></em><a class="headerlink" href="#sortinghat.core.errors.ClosedTransactionError.code" title="Permalink to this definition">¶</a></dt>
+<dd></dd></dl>
+<dl class="py attribute">
+<dt class="sig sig-object py" id="sortinghat.core.errors.ClosedTransactionError.message">
+<span class="sig-name descname"><span class="pre">message</span></span><em class="property"> <span class="pre">=</span> <span class="pre">'%(msg)s'</span></em><a class="headerlink" href="#sortinghat.core.errors.ClosedTransactionError.message" title="Permalink to this definition">¶</a></dt>
+<dd></dd></dl>
+</dd></dl>
+<dl class="py exception">
+<dt class="sig sig-object py" id="sortinghat.core.errors.DuplicateRangeError">
+<em class="property"><span class="pre">exception</span> </em><span class="sig-prename descclassname"><span class="pre">sortinghat.core.errors.</span></span><span class="sig-name descname"><span class="pre">DuplicateRangeError</span></span><span class="sig-paren">(</span><em class="sig-param"><span class="o"><span class="pre">**</span></span><span class="n"><span class="pre">kwargs</span></span></em><span class="sig-paren">)</span><a class="reference internal" href="../_modules/sortinghat/core/errors.html#DuplicateRangeError"><span class="viewcode-link"><span class="pre">[source]</span></span></a><a class="headerlink" href="#sortinghat.core.errors.DuplicateRangeError" title="Permalink to this definition">¶</a></dt>
+<dd><p>Bases: <a class="reference internal" href="#sortinghat.core.errors.BaseError" title="sortinghat.core.errors.BaseError"><code class="xref py py-class docutils literal notranslate"><span class="pre">sortinghat.core.errors.BaseError</span></code></a></p>
+<p>Exception raised when setting an enrollment with an existing date range</p>
+<dl class="py attribute">
+<dt class="sig sig-object py" id="sortinghat.core.errors.DuplicateRangeError.code">
+<span class="sig-name descname"><span class="pre">code</span></span><em class="property"> <span class="pre">=</span> <span class="pre">14</span></em><a class="headerlink" href="#sortinghat.core.errors.DuplicateRangeError.code" title="Permalink to this definition">¶</a></dt>
+<dd></dd></dl>
+<dl class="py attribute">
+<dt class="sig sig-object py" id="sortinghat.core.errors.DuplicateRangeError.message">
+<span class="sig-name descname"><span class="pre">message</span></span><em class="property"> <span class="pre">=</span> <span class="pre">"range</span> <span class="pre">date</span> <span class="pre">'%(start)s'-'%(end)s'</span> <span class="pre">is</span> <span class="pre">part</span> <span class="pre">of</span> <span class="pre">an</span> <span class="pre">existing</span> <span class="pre">range</span> <span class="pre">for</span> <span class="pre">%(org)s"</span></em><a class="headerlink" href="#sortinghat.core.errors.DuplicateRangeError.message" title="Permalink to this definition">¶</a></dt>
+<dd></dd></dl>
+</dd></dl>
+<dl class="py exception">
+<dt class="sig sig-object py" id="sortinghat.core.errors.EqualIndividualError">
+<em class="property"><span class="pre">exception</span> </em><span class="sig-prename descclassname"><span class="pre">sortinghat.core.errors.</span></span><span class="sig-name descname"><span class="pre">EqualIndividualError</span></span><span class="sig-paren">(</span><em class="sig-param"><span class="o"><span class="pre">**</span></span><span class="n"><span class="pre">kwargs</span></span></em><span class="sig-paren">)</span><a class="reference internal" href="../_modules/sortinghat/core/errors.html#EqualIndividualError"><span class="viewcode-link"><span class="pre">[source]</span></span></a><a class="headerlink" href="#sortinghat.core.errors.EqualIndividualError" title="Permalink to this definition">¶</a></dt>
+<dd><p>Bases: <a class="reference internal" href="#sortinghat.core.errors.BaseError" title="sortinghat.core.errors.BaseError"><code class="xref py py-class docutils literal notranslate"><span class="pre">sortinghat.core.errors.BaseError</span></code></a></p>
+<p>Exception raised when the source and destination individual are the same</p>
+<dl class="py attribute">
+<dt class="sig sig-object py" id="sortinghat.core.errors.EqualIndividualError.code">
+<span class="sig-name descname"><span class="pre">code</span></span><em class="property"> <span class="pre">=</span> <span class="pre">15</span></em><a class="headerlink" href="#sortinghat.core.errors.EqualIndividualError.code" title="Permalink to this definition">¶</a></dt>
+<dd></dd></dl>
+<dl class="py attribute">
+<dt class="sig sig-object py" id="sortinghat.core.errors.EqualIndividualError.message">
+<span class="sig-name descname"><span class="pre">message</span></span><em class="property"> <span class="pre">=</span> <span class="pre">'%(msg)s'</span></em><a class="headerlink" href="#sortinghat.core.errors.EqualIndividualError.message" title="Permalink to this definition">¶</a></dt>
+<dd></dd></dl>
+</dd></dl>
+<dl class="py exception">
+<dt class="sig sig-object py" id="sortinghat.core.errors.InvalidFilterError">
+<em class="property"><span class="pre">exception</span> </em><span class="sig-prename descclassname"><span class="pre">sortinghat.core.errors.</span></span><span class="sig-name descname"><span class="pre">InvalidFilterError</span></span><span class="sig-paren">(</span><em class="sig-param"><span class="o"><span class="pre">**</span></span><span class="n"><span class="pre">kwargs</span></span></em><span class="sig-paren">)</span><a class="reference internal" href="../_modules/sortinghat/core/errors.html#InvalidFilterError"><span class="viewcode-link"><span class="pre">[source]</span></span></a><a class="headerlink" href="#sortinghat.core.errors.InvalidFilterError" title="Permalink to this definition">¶</a></dt>
+<dd><p>Bases: <a class="reference internal" href="#sortinghat.core.errors.BaseError" title="sortinghat.core.errors.BaseError"><code class="xref py py-class docutils literal notranslate"><span class="pre">sortinghat.core.errors.BaseError</span></code></a></p>
+<p>Exception raised when a filter is invalid</p>
+<dl class="py attribute">
+<dt class="sig sig-object py" id="sortinghat.core.errors.InvalidFilterError.code">
+<span class="sig-name descname"><span class="pre">code</span></span><em class="property"> <span class="pre">=</span> <span class="pre">16</span></em><a class="headerlink" href="#sortinghat.core.errors.InvalidFilterError.code" title="Permalink to this definition">¶</a></dt>
+<dd></dd></dl>
+<dl class="py attribute">
+<dt class="sig sig-object py" id="sortinghat.core.errors.InvalidFilterError.message">
+<span class="sig-name descname"><span class="pre">message</span></span><em class="property"> <span class="pre">=</span> <span class="pre">'Error</span> <span class="pre">in</span> <span class="pre">%(filter_name)s</span> <span class="pre">filter:</span> <span class="pre">%(msg)s'</span></em><a class="headerlink" href="#sortinghat.core.errors.InvalidFilterError.message" title="Permalink to this definition">¶</a></dt>
+<dd></dd></dl>
+</dd></dl>
+<dl class="py exception">
+<dt class="sig sig-object py" id="sortinghat.core.errors.InvalidValueError">
+<em class="property"><span class="pre">exception</span> </em><span class="sig-prename descclassname"><span class="pre">sortinghat.core.errors.</span></span><span class="sig-name descname"><span class="pre">InvalidValueError</span></span><span class="sig-paren">(</span><em class="sig-param"><span class="o"><span class="pre">**</span></span><span class="n"><span class="pre">kwargs</span></span></em><span class="sig-paren">)</span><a class="reference internal" href="../_modules/sortinghat/core/errors.html#InvalidValueError"><span class="viewcode-link"><span class="pre">[source]</span></span></a><a class="headerlink" href="#sortinghat.core.errors.InvalidValueError" title="Permalink to this definition">¶</a></dt>
+<dd><p>Bases: <a class="reference internal" href="#sortinghat.core.errors.BaseError" title="sortinghat.core.errors.BaseError"><code class="xref py py-class docutils literal notranslate"><span class="pre">sortinghat.core.errors.BaseError</span></code></a></p>
+<p>Exception raised when a value is invalid</p>
+<dl class="py attribute">
+<dt class="sig sig-object py" id="sortinghat.core.errors.InvalidValueError.code">
+<span class="sig-name descname"><span class="pre">code</span></span><em class="property"> <span class="pre">=</span> <span class="pre">10</span></em><a class="headerlink" href="#sortinghat.core.errors.InvalidValueError.code" title="Permalink to this definition">¶</a></dt>
+<dd></dd></dl>
+<dl class="py attribute">
+<dt class="sig sig-object py" id="sortinghat.core.errors.InvalidValueError.message">
+<span class="sig-name descname"><span class="pre">message</span></span><em class="property"> <span class="pre">=</span> <span class="pre">'%(msg)s'</span></em><a class="headerlink" href="#sortinghat.core.errors.InvalidValueError.message" title="Permalink to this definition">¶</a></dt>
+<dd></dd></dl>
+</dd></dl>
+<dl class="py exception">
+<dt class="sig sig-object py" id="sortinghat.core.errors.LockedIdentityError">
+<em class="property"><span class="pre">exception</span> </em><span class="sig-prename descclassname"><span class="pre">sortinghat.core.errors.</span></span><span class="sig-name descname"><span class="pre">LockedIdentityError</span></span><span class="sig-paren">(</span><em class="sig-param"><span class="o"><span class="pre">**</span></span><span class="n"><span class="pre">kwargs</span></span></em><span class="sig-paren">)</span><a class="reference internal" href="../_modules/sortinghat/core/errors.html#LockedIdentityError"><span class="viewcode-link"><span class="pre">[source]</span></span></a><a class="headerlink" href="#sortinghat.core.errors.LockedIdentityError" title="Permalink to this definition">¶</a></dt>
+<dd><p>Bases: <a class="reference internal" href="#sortinghat.core.errors.BaseError" title="sortinghat.core.errors.BaseError"><code class="xref py py-class docutils literal notranslate"><span class="pre">sortinghat.core.errors.BaseError</span></code></a></p>
+<p>Exception raised when performing a change on a locked individual</p>
+<dl class="py attribute">
+<dt class="sig sig-object py" id="sortinghat.core.errors.LockedIdentityError.code">
+<span class="sig-name descname"><span class="pre">code</span></span><em class="property"> <span class="pre">=</span> <span class="pre">13</span></em><a class="headerlink" href="#sortinghat.core.errors.LockedIdentityError.code" title="Permalink to this definition">¶</a></dt>
+<dd></dd></dl>
+<dl class="py attribute">
+<dt class="sig sig-object py" id="sortinghat.core.errors.LockedIdentityError.message">
+<span class="sig-name descname"><span class="pre">message</span></span><em class="property"> <span class="pre">=</span> <span class="pre">'Individual</span> <span class="pre">%(uuid)s</span> <span class="pre">is</span> <span class="pre">locked'</span></em><a class="headerlink" href="#sortinghat.core.errors.LockedIdentityError.message" title="Permalink to this definition">¶</a></dt>
+<dd></dd></dl>
+</dd></dl>
+<dl class="py exception">
+<dt class="sig sig-object py" id="sortinghat.core.errors.NotFoundError">
+<em class="property"><span class="pre">exception</span> </em><span class="sig-prename descclassname"><span class="pre">sortinghat.core.errors.</span></span><span class="sig-name descname"><span class="pre">NotFoundError</span></span><span class="sig-paren">(</span><em class="sig-param"><span class="o"><span class="pre">**</span></span><span class="n"><span class="pre">kwargs</span></span></em><span class="sig-paren">)</span><a class="reference internal" href="../_modules/sortinghat/core/errors.html#NotFoundError"><span class="viewcode-link"><span class="pre">[source]</span></span></a><a class="headerlink" href="#sortinghat.core.errors.NotFoundError" title="Permalink to this definition">¶</a></dt>
+<dd><p>Bases: <a class="reference internal" href="#sortinghat.core.errors.BaseError" title="sortinghat.core.errors.BaseError"><code class="xref py py-class docutils literal notranslate"><span class="pre">sortinghat.core.errors.BaseError</span></code></a></p>
+<p>Exception raised when an entity is not found in the registry</p>
+<dl class="py attribute">
+<dt class="sig sig-object py" id="sortinghat.core.errors.NotFoundError.code">
+<span class="sig-name descname"><span class="pre">code</span></span><em class="property"> <span class="pre">=</span> <span class="pre">9</span></em><a class="headerlink" href="#sortinghat.core.errors.NotFoundError.code" title="Permalink to this definition">¶</a></dt>
+<dd></dd></dl>
+<dl class="py attribute">
+<dt class="sig sig-object py" id="sortinghat.core.errors.NotFoundError.message">
+<span class="sig-name descname"><span class="pre">message</span></span><em class="property"> <span class="pre">=</span> <span class="pre">'%(entity)s</span> <span class="pre">not</span> <span class="pre">found</span> <span class="pre">in</span> <span class="pre">the</span> <span class="pre">registry'</span></em><a class="headerlink" href="#sortinghat.core.errors.NotFoundError.message" title="Permalink to this definition">¶</a></dt>
+<dd></dd></dl>
+</dd></dl>
+<dl class="py exception">
+<dt class="sig sig-object py" id="sortinghat.core.errors.RecommendationEngineError">
+<em class="property"><span class="pre">exception</span> </em><span class="sig-prename descclassname"><span class="pre">sortinghat.core.errors.</span></span><span class="sig-name descname"><span class="pre">RecommendationEngineError</span></span><span class="sig-paren">(</span><em class="sig-param"><span class="o"><span class="pre">**</span></span><span class="n"><span class="pre">kwargs</span></span></em><span class="sig-paren">)</span><a class="reference internal" href="../_modules/sortinghat/core/errors.html#RecommendationEngineError"><span class="viewcode-link"><span class="pre">[source]</span></span></a><a class="headerlink" href="#sortinghat.core.errors.RecommendationEngineError" title="Permalink to this definition">¶</a></dt>
+<dd><p>Bases: <a class="reference internal" href="#sortinghat.core.errors.BaseError" title="sortinghat.core.errors.BaseError"><code class="xref py py-class docutils literal notranslate"><span class="pre">sortinghat.core.errors.BaseError</span></code></a></p>
+<p>Exception raised when there is an error in the recommendation engine</p>
+<dl class="py attribute">
+<dt class="sig sig-object py" id="sortinghat.core.errors.RecommendationEngineError.code">
+<span class="sig-name descname"><span class="pre">code</span></span><em class="property"> <span class="pre">=</span> <span class="pre">100</span></em><a class="headerlink" href="#sortinghat.core.errors.RecommendationEngineError.code" title="Permalink to this definition">¶</a></dt>
+<dd></dd></dl>
+<dl class="py attribute">
+<dt class="sig sig-object py" id="sortinghat.core.errors.RecommendationEngineError.message">
+<span class="sig-name descname"><span class="pre">message</span></span><em class="property"> <span class="pre">=</span> <span class="pre">'%(msg)s'</span></em><a class="headerlink" href="#sortinghat.core.errors.RecommendationEngineError.message" title="Permalink to this definition">¶</a></dt>
+<dd></dd></dl>
+</dd></dl>
 </div>
 <div class="section" id="sortinghat-core-jobs-module">
 <h2>sortinghat.core.jobs module<a class="headerlink" href="#sortinghat-core-jobs-module" title="Permalink to this headline">¶</a></h2>
@@ -218,8 +375,8 @@
 <div class="section" id="sortinghat-core-views-module">
 <h2>sortinghat.core.views module<a class="headerlink" href="#sortinghat-core-views-module" title="Permalink to this headline">¶</a></h2>
 </div>
-<div class="section" id="module-contents">
-<h2>Module contents<a class="headerlink" href="#module-contents" title="Permalink to this headline">¶</a></h2>
+<div class="section" id="module-sortinghat.core">
+<span id="module-contents"></span><h2>Module contents<a class="headerlink" href="#module-sortinghat.core" title="Permalink to this headline">¶</a></h2>
 </div>
 </div>
 
@@ -265,17 +422,17 @@
 <li><a class="reference internal" href="#sortinghat-core-admin-module">sortinghat.core.admin module</a></li>
 <li><a class="reference internal" href="#sortinghat-core-api-module">sortinghat.core.api module</a></li>
 <li><a class="reference internal" href="#sortinghat-core-apps-module">sortinghat.core.apps module</a></li>
-<li><a class="reference internal" href="#sortinghat-core-context-module">sortinghat.core.context module</a></li>
+<li><a class="reference internal" href="#module-sortinghat.core.context">sortinghat.core.context module</a></li>
 <li><a class="reference internal" href="#sortinghat-core-db-module">sortinghat.core.db module</a></li>
 <li><a class="reference internal" href="#sortinghat-core-decorators-module">sortinghat.core.decorators module</a></li>
-<li><a class="reference internal" href="#sortinghat-core-errors-module">sortinghat.core.errors module</a></li>
+<li><a class="reference internal" href="#module-sortinghat.core.errors">sortinghat.core.errors module</a></li>
 <li><a class="reference internal" href="#sortinghat-core-jobs-module">sortinghat.core.jobs module</a></li>
 <li><a class="reference internal" href="#sortinghat-core-log-module">sortinghat.core.log module</a></li>
 <li><a class="reference internal" href="#sortinghat-core-models-module">sortinghat.core.models module</a></li>
 <li><a class="reference internal" href="#sortinghat-core-schema-module">sortinghat.core.schema module</a></li>
 <li><a class="reference internal" href="#sortinghat-core-utils-module">sortinghat.core.utils module</a></li>
 <li><a class="reference internal" href="#sortinghat-core-views-module">sortinghat.core.views module</a></li>
-<li><a class="reference internal" href="#module-contents">Module contents</a></li>
+<li><a class="reference internal" href="#module-sortinghat.core">Module contents</a></li>
 </ul>
 </li>
 </ul>

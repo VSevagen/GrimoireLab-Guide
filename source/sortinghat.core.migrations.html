@@ -4,7 +4,7 @@
     <meta name="viewport" content="width=device-width,initial-scale=1"/>
     <meta name="color-scheme" content="light dark"><link rel="author" title="About these documents" href="../about.html" /><link rel="index" title="Index" href="../genindex.html" /><link rel="search" title="Search" href="../search.html" />
 
-    <meta name="generator" content="sphinx-4.1.0, furo 2021.07.05.beta38"/>
+    <meta name="generator" content="sphinx-4.1.1, furo 2021.07.05.beta38"/>
         <title>sortinghat.core.migrations package - GrimoireLab Guide</title>
       <link rel="stylesheet" type="text/css" href="../_static/pygments.css" />
     <link rel="stylesheet" type="text/css" href="../_static/styles/furo.css" />
@@ -153,29 +153,133 @@
 <div class="section" id="sortinghat-core-migrations-0001-initial-module">
 <h2>sortinghat.core.migrations.0001_initial module<a class="headerlink" href="#sortinghat-core-migrations-0001-initial-module" title="Permalink to this headline">¶</a></h2>
 </div>
-<div class="section" id="sortinghat-core-migrations-0002-log-module">
-<h2>sortinghat.core.migrations.0002_log module<a class="headerlink" href="#sortinghat-core-migrations-0002-log-module" title="Permalink to this headline">¶</a></h2>
+<div class="section" id="module-sortinghat.core.migrations.0002_log">
+<span id="sortinghat-core-migrations-0002-log-module"></span><h2>sortinghat.core.migrations.0002_log module<a class="headerlink" href="#module-sortinghat.core.migrations.0002_log" title="Permalink to this headline">¶</a></h2>
+<dl class="py class">
+<dt class="sig sig-object py" id="sortinghat.core.migrations.0002_log.Migration">
+<em class="property"><span class="pre">class</span> </em><span class="sig-prename descclassname"><span class="pre">sortinghat.core.migrations.0002_log.</span></span><span class="sig-name descname"><span class="pre">Migration</span></span><span class="sig-paren">(</span><em class="sig-param"><span class="n"><span class="pre">name</span></span></em>, <em class="sig-param"><span class="n"><span class="pre">app_label</span></span></em><span class="sig-paren">)</span><a class="reference internal" href="../_modules/sortinghat/core/migrations/0002_log.html#Migration"><span class="viewcode-link"><span class="pre">[source]</span></span></a><a class="headerlink" href="#sortinghat.core.migrations.0002_log.Migration" title="Permalink to this definition">¶</a></dt>
+<dd><p>Bases: <code class="xref py py-class docutils literal notranslate"><span class="pre">django.db.migrations.migration.Migration</span></code></p>
+<dl class="py attribute">
+<dt class="sig sig-object py" id="sortinghat.core.migrations.0002_log.Migration.dependencies">
+<span class="sig-name descname"><span class="pre">dependencies</span></span><em class="property"> <span class="pre">=</span> <span class="pre">[('core',</span> <span class="pre">'0001_initial')]</span></em><a class="headerlink" href="#sortinghat.core.migrations.0002_log.Migration.dependencies" title="Permalink to this definition">¶</a></dt>
+<dd></dd></dl>
+<dl class="py attribute">
+<dt class="sig sig-object py" id="sortinghat.core.migrations.0002_log.Migration.operations">
+<span class="sig-name descname"><span class="pre">operations</span></span><em class="property"> <span class="pre">=</span> <span class="pre">[&lt;CreateModel</span>  <span class="pre">name='Operation',</span> <span class="pre">fields=[('ouid',</span> <span class="pre">&lt;django.db.models.fields.CharField&gt;),</span> <span class="pre">('op_type',</span> <span class="pre">&lt;django.db.models.fields.CharField&gt;),</span> <span class="pre">('entity_type',</span> <span class="pre">&lt;django.db.models.fields.CharField&gt;),</span> <span class="pre">('target',</span> <span class="pre">&lt;django.db.models.fields.CharField&gt;),</span> <span class="pre">('timestamp',</span> <span class="pre">&lt;django.db.models.fields.DateTimeField&gt;),</span> <span class="pre">('args',</span> <span class="pre">&lt;django.db.models.fields.json.JSONField&gt;)],</span> <span class="pre">options={'db_table':</span> <span class="pre">'operations',</span> <span class="pre">'ordering':</span> <span class="pre">('timestamp',</span> <span class="pre">'ouid',</span> <span class="pre">'trx')}&gt;,</span> <span class="pre">&lt;CreateModel</span>  <span class="pre">name='Transaction',</span> <span class="pre">fields=[('tuid',</span> <span class="pre">&lt;django.db.models.fields.CharField&gt;),</span> <span class="pre">('name',</span> <span class="pre">&lt;django.db.models.fields.CharField&gt;),</span> <span class="pre">('created_at',</span> <span class="pre">&lt;django.db.models.fields.DateTimeField&gt;),</span> <span class="pre">('closed_at',</span> <span class="pre">&lt;django.db.models.fields.DateTimeField&gt;),</span> <span class="pre">('is_closed',</span> <span class="pre">&lt;django.db.models.fields.BooleanField&gt;)],</span> <span class="pre">options={'db_table':</span> <span class="pre">'transactions',</span> <span class="pre">'ordering':</span> <span class="pre">('created_at',</span> <span class="pre">'tuid')}&gt;,</span> <span class="pre">&lt;AlterModelOptions</span>  <span class="pre">name='enrollment',</span> <span class="pre">options={'ordering':</span> <span class="pre">('start',</span> <span class="pre">'end')}&gt;,</span> <span class="pre">&lt;AlterField</span>  <span class="pre">model_name='enrollment',</span> <span class="pre">name='end',</span> <span class="pre">field=&lt;django.db.models.fields.DateTimeField&gt;&gt;,</span> <span class="pre">&lt;AlterField</span>  <span class="pre">model_name='enrollment',</span> <span class="pre">name='start',</span> <span class="pre">field=&lt;django.db.models.fields.DateTimeField&gt;&gt;,</span> <span class="pre">&lt;AddField</span>  <span class="pre">model_name='operation',</span> <span class="pre">name='trx',</span> <span class="pre">field=&lt;django.db.models.fields.related.ForeignKey&gt;&gt;]</span></em><a class="headerlink" href="#sortinghat.core.migrations.0002_log.Migration.operations" title="Permalink to this definition">¶</a></dt>
+<dd></dd></dl>
+</dd></dl>
 </div>
-<div class="section" id="sortinghat-core-migrations-0003-context-module">
-<h2>sortinghat.core.migrations.0003_context module<a class="headerlink" href="#sortinghat-core-migrations-0003-context-module" title="Permalink to this headline">¶</a></h2>
+<div class="section" id="module-sortinghat.core.migrations.0003_context">
+<span id="sortinghat-core-migrations-0003-context-module"></span><h2>sortinghat.core.migrations.0003_context module<a class="headerlink" href="#module-sortinghat.core.migrations.0003_context" title="Permalink to this headline">¶</a></h2>
+<dl class="py class">
+<dt class="sig sig-object py" id="sortinghat.core.migrations.0003_context.Migration">
+<em class="property"><span class="pre">class</span> </em><span class="sig-prename descclassname"><span class="pre">sortinghat.core.migrations.0003_context.</span></span><span class="sig-name descname"><span class="pre">Migration</span></span><span class="sig-paren">(</span><em class="sig-param"><span class="n"><span class="pre">name</span></span></em>, <em class="sig-param"><span class="n"><span class="pre">app_label</span></span></em><span class="sig-paren">)</span><a class="reference internal" href="../_modules/sortinghat/core/migrations/0003_context.html#Migration"><span class="viewcode-link"><span class="pre">[source]</span></span></a><a class="headerlink" href="#sortinghat.core.migrations.0003_context.Migration" title="Permalink to this definition">¶</a></dt>
+<dd><p>Bases: <code class="xref py py-class docutils literal notranslate"><span class="pre">django.db.migrations.migration.Migration</span></code></p>
+<dl class="py attribute">
+<dt class="sig sig-object py" id="sortinghat.core.migrations.0003_context.Migration.dependencies">
+<span class="sig-name descname"><span class="pre">dependencies</span></span><em class="property"> <span class="pre">=</span> <span class="pre">[('core',</span> <span class="pre">'0002_log')]</span></em><a class="headerlink" href="#sortinghat.core.migrations.0003_context.Migration.dependencies" title="Permalink to this definition">¶</a></dt>
+<dd></dd></dl>
+<dl class="py attribute">
+<dt class="sig sig-object py" id="sortinghat.core.migrations.0003_context.Migration.operations">
+<span class="sig-name descname"><span class="pre">operations</span></span><em class="property"> <span class="pre">=</span> <span class="pre">[&lt;AddField</span>  <span class="pre">model_name='transaction',</span> <span class="pre">name='authored_by',</span> <span class="pre">field=&lt;django.db.models.fields.CharField&gt;&gt;,</span> <span class="pre">&lt;AlterField</span>  <span class="pre">model_name='operation',</span> <span class="pre">name='trx',</span> <span class="pre">field=&lt;django.db.models.fields.related.ForeignKey&gt;,</span> <span class="pre">preserve_default=False&gt;]</span></em><a class="headerlink" href="#sortinghat.core.migrations.0003_context.Migration.operations" title="Permalink to this definition">¶</a></dt>
+<dd></dd></dl>
+</dd></dl>
 </div>
-<div class="section" id="sortinghat-core-migrations-0004-lock-module">
-<h2>sortinghat.core.migrations.0004_lock module<a class="headerlink" href="#sortinghat-core-migrations-0004-lock-module" title="Permalink to this headline">¶</a></h2>
+<div class="section" id="module-sortinghat.core.migrations.0004_lock">
+<span id="sortinghat-core-migrations-0004-lock-module"></span><h2>sortinghat.core.migrations.0004_lock module<a class="headerlink" href="#module-sortinghat.core.migrations.0004_lock" title="Permalink to this headline">¶</a></h2>
+<dl class="py class">
+<dt class="sig sig-object py" id="sortinghat.core.migrations.0004_lock.Migration">
+<em class="property"><span class="pre">class</span> </em><span class="sig-prename descclassname"><span class="pre">sortinghat.core.migrations.0004_lock.</span></span><span class="sig-name descname"><span class="pre">Migration</span></span><span class="sig-paren">(</span><em class="sig-param"><span class="n"><span class="pre">name</span></span></em>, <em class="sig-param"><span class="n"><span class="pre">app_label</span></span></em><span class="sig-paren">)</span><a class="reference internal" href="../_modules/sortinghat/core/migrations/0004_lock.html#Migration"><span class="viewcode-link"><span class="pre">[source]</span></span></a><a class="headerlink" href="#sortinghat.core.migrations.0004_lock.Migration" title="Permalink to this definition">¶</a></dt>
+<dd><p>Bases: <code class="xref py py-class docutils literal notranslate"><span class="pre">django.db.migrations.migration.Migration</span></code></p>
+<dl class="py attribute">
+<dt class="sig sig-object py" id="sortinghat.core.migrations.0004_lock.Migration.dependencies">
+<span class="sig-name descname"><span class="pre">dependencies</span></span><em class="property"> <span class="pre">=</span> <span class="pre">[('core',</span> <span class="pre">'0003_context')]</span></em><a class="headerlink" href="#sortinghat.core.migrations.0004_lock.Migration.dependencies" title="Permalink to this definition">¶</a></dt>
+<dd></dd></dl>
+<dl class="py attribute">
+<dt class="sig sig-object py" id="sortinghat.core.migrations.0004_lock.Migration.operations">
+<span class="sig-name descname"><span class="pre">operations</span></span><em class="property"> <span class="pre">=</span> <span class="pre">[&lt;AddField</span>  <span class="pre">model_name='uniqueidentity',</span> <span class="pre">name='is_locked',</span> <span class="pre">field=&lt;django.db.models.fields.BooleanField&gt;&gt;]</span></em><a class="headerlink" href="#sortinghat.core.migrations.0004_lock.Migration.operations" title="Permalink to this definition">¶</a></dt>
+<dd></dd></dl>
+</dd></dl>
 </div>
-<div class="section" id="sortinghat-core-migrations-0005-individuals-module">
-<h2>sortinghat.core.migrations.0005_individuals module<a class="headerlink" href="#sortinghat-core-migrations-0005-individuals-module" title="Permalink to this headline">¶</a></h2>
+<div class="section" id="module-sortinghat.core.migrations.0005_individuals">
+<span id="sortinghat-core-migrations-0005-individuals-module"></span><h2>sortinghat.core.migrations.0005_individuals module<a class="headerlink" href="#module-sortinghat.core.migrations.0005_individuals" title="Permalink to this headline">¶</a></h2>
+<dl class="py class">
+<dt class="sig sig-object py" id="sortinghat.core.migrations.0005_individuals.Migration">
+<em class="property"><span class="pre">class</span> </em><span class="sig-prename descclassname"><span class="pre">sortinghat.core.migrations.0005_individuals.</span></span><span class="sig-name descname"><span class="pre">Migration</span></span><span class="sig-paren">(</span><em class="sig-param"><span class="n"><span class="pre">name</span></span></em>, <em class="sig-param"><span class="n"><span class="pre">app_label</span></span></em><span class="sig-paren">)</span><a class="reference internal" href="../_modules/sortinghat/core/migrations/0005_individuals.html#Migration"><span class="viewcode-link"><span class="pre">[source]</span></span></a><a class="headerlink" href="#sortinghat.core.migrations.0005_individuals.Migration" title="Permalink to this definition">¶</a></dt>
+<dd><p>Bases: <code class="xref py py-class docutils literal notranslate"><span class="pre">django.db.migrations.migration.Migration</span></code></p>
+<dl class="py attribute">
+<dt class="sig sig-object py" id="sortinghat.core.migrations.0005_individuals.Migration.dependencies">
+<span class="sig-name descname"><span class="pre">dependencies</span></span><em class="property"> <span class="pre">=</span> <span class="pre">[('core',</span> <span class="pre">'0004_lock')]</span></em><a class="headerlink" href="#sortinghat.core.migrations.0005_individuals.Migration.dependencies" title="Permalink to this definition">¶</a></dt>
+<dd></dd></dl>
+<dl class="py attribute">
+<dt class="sig sig-object py" id="sortinghat.core.migrations.0005_individuals.Migration.operations">
+<span class="sig-name descname"><span class="pre">operations</span></span><em class="property"> <span class="pre">=</span> <span class="pre">[&lt;RenameModel</span>  <span class="pre">old_name='UniqueIdentity',</span> <span class="pre">new_name='Individual'&gt;,</span> <span class="pre">&lt;AlterModelTable</span>  <span class="pre">name='individual',</span> <span class="pre">table='individuals'&gt;]</span></em><a class="headerlink" href="#sortinghat.core.migrations.0005_individuals.Migration.operations" title="Permalink to this definition">¶</a></dt>
+<dd></dd></dl>
+</dd></dl>
 </div>
-<div class="section" id="sortinghat-core-migrations-0006-uidentity-module">
-<h2>sortinghat.core.migrations.0006_uidentity module<a class="headerlink" href="#sortinghat-core-migrations-0006-uidentity-module" title="Permalink to this headline">¶</a></h2>
+<div class="section" id="module-sortinghat.core.migrations.0006_uidentity">
+<span id="sortinghat-core-migrations-0006-uidentity-module"></span><h2>sortinghat.core.migrations.0006_uidentity module<a class="headerlink" href="#module-sortinghat.core.migrations.0006_uidentity" title="Permalink to this headline">¶</a></h2>
+<dl class="py class">
+<dt class="sig sig-object py" id="sortinghat.core.migrations.0006_uidentity.Migration">
+<em class="property"><span class="pre">class</span> </em><span class="sig-prename descclassname"><span class="pre">sortinghat.core.migrations.0006_uidentity.</span></span><span class="sig-name descname"><span class="pre">Migration</span></span><span class="sig-paren">(</span><em class="sig-param"><span class="n"><span class="pre">name</span></span></em>, <em class="sig-param"><span class="n"><span class="pre">app_label</span></span></em><span class="sig-paren">)</span><a class="reference internal" href="../_modules/sortinghat/core/migrations/0006_uidentity.html#Migration"><span class="viewcode-link"><span class="pre">[source]</span></span></a><a class="headerlink" href="#sortinghat.core.migrations.0006_uidentity.Migration" title="Permalink to this definition">¶</a></dt>
+<dd><p>Bases: <code class="xref py py-class docutils literal notranslate"><span class="pre">django.db.migrations.migration.Migration</span></code></p>
+<dl class="py attribute">
+<dt class="sig sig-object py" id="sortinghat.core.migrations.0006_uidentity.Migration.dependencies">
+<span class="sig-name descname"><span class="pre">dependencies</span></span><em class="property"> <span class="pre">=</span> <span class="pre">[('core',</span> <span class="pre">'0005_individuals')]</span></em><a class="headerlink" href="#sortinghat.core.migrations.0006_uidentity.Migration.dependencies" title="Permalink to this definition">¶</a></dt>
+<dd></dd></dl>
+<dl class="py attribute">
+<dt class="sig sig-object py" id="sortinghat.core.migrations.0006_uidentity.Migration.operations">
+<span class="sig-name descname"><span class="pre">operations</span></span><em class="property"> <span class="pre">=</span> <span class="pre">[&lt;RenameField</span>  <span class="pre">model_name='enrollment',</span> <span class="pre">old_name='uidentity',</span> <span class="pre">new_name='individual'&gt;,</span> <span class="pre">&lt;RenameField</span>  <span class="pre">model_name='identity',</span> <span class="pre">old_name='uidentity',</span> <span class="pre">new_name='individual'&gt;,</span> <span class="pre">&lt;RenameField</span>  <span class="pre">model_name='profile',</span> <span class="pre">old_name='uidentity',</span> <span class="pre">new_name='individual'&gt;,</span> <span class="pre">&lt;AlterUniqueTogether</span>  <span class="pre">name='enrollment',</span> <span class="pre">unique_together={('individual',</span> <span class="pre">'organization',</span> <span class="pre">'start',</span> <span class="pre">'end')}&gt;]</span></em><a class="headerlink" href="#sortinghat.core.migrations.0006_uidentity.Migration.operations" title="Permalink to this definition">¶</a></dt>
+<dd></dd></dl>
+</dd></dl>
 </div>
-<div class="section" id="sortinghat-core-migrations-0007-rename-uuid-to-mk-module">
-<h2>sortinghat.core.migrations.0007_rename_uuid_to_mk module<a class="headerlink" href="#sortinghat-core-migrations-0007-rename-uuid-to-mk-module" title="Permalink to this headline">¶</a></h2>
+<div class="section" id="module-sortinghat.core.migrations.0007_rename_uuid_to_mk">
+<span id="sortinghat-core-migrations-0007-rename-uuid-to-mk-module"></span><h2>sortinghat.core.migrations.0007_rename_uuid_to_mk module<a class="headerlink" href="#module-sortinghat.core.migrations.0007_rename_uuid_to_mk" title="Permalink to this headline">¶</a></h2>
+<dl class="py class">
+<dt class="sig sig-object py" id="sortinghat.core.migrations.0007_rename_uuid_to_mk.Migration">
+<em class="property"><span class="pre">class</span> </em><span class="sig-prename descclassname"><span class="pre">sortinghat.core.migrations.0007_rename_uuid_to_mk.</span></span><span class="sig-name descname"><span class="pre">Migration</span></span><span class="sig-paren">(</span><em class="sig-param"><span class="n"><span class="pre">name</span></span></em>, <em class="sig-param"><span class="n"><span class="pre">app_label</span></span></em><span class="sig-paren">)</span><a class="reference internal" href="../_modules/sortinghat/core/migrations/0007_rename_uuid_to_mk.html#Migration"><span class="viewcode-link"><span class="pre">[source]</span></span></a><a class="headerlink" href="#sortinghat.core.migrations.0007_rename_uuid_to_mk.Migration" title="Permalink to this definition">¶</a></dt>
+<dd><p>Bases: <code class="xref py py-class docutils literal notranslate"><span class="pre">django.db.migrations.migration.Migration</span></code></p>
+<dl class="py attribute">
+<dt class="sig sig-object py" id="sortinghat.core.migrations.0007_rename_uuid_to_mk.Migration.dependencies">
+<span class="sig-name descname"><span class="pre">dependencies</span></span><em class="property"> <span class="pre">=</span> <span class="pre">[('core',</span> <span class="pre">'0006_uidentity')]</span></em><a class="headerlink" href="#sortinghat.core.migrations.0007_rename_uuid_to_mk.Migration.dependencies" title="Permalink to this definition">¶</a></dt>
+<dd></dd></dl>
+<dl class="py attribute">
+<dt class="sig sig-object py" id="sortinghat.core.migrations.0007_rename_uuid_to_mk.Migration.operations">
+<span class="sig-name descname"><span class="pre">operations</span></span><em class="property"> <span class="pre">=</span> <span class="pre">[&lt;RenameField</span>  <span class="pre">model_name='individual',</span> <span class="pre">old_name='uuid',</span> <span class="pre">new_name='mk'&gt;,</span> <span class="pre">&lt;AlterField</span>  <span class="pre">model_name='enrollment',</span> <span class="pre">name='individual',</span> <span class="pre">field=&lt;django.db.models.fields.related.ForeignKey&gt;&gt;,</span> <span class="pre">&lt;AlterField</span>  <span class="pre">model_name='identity',</span> <span class="pre">name='individual',</span> <span class="pre">field=&lt;django.db.models.fields.related.ForeignKey&gt;&gt;,</span> <span class="pre">&lt;AlterField</span>  <span class="pre">model_name='profile',</span> <span class="pre">name='individual',</span> <span class="pre">field=&lt;django.db.models.fields.related.OneToOneField&gt;&gt;]</span></em><a class="headerlink" href="#sortinghat.core.migrations.0007_rename_uuid_to_mk.Migration.operations" title="Permalink to this definition">¶</a></dt>
+<dd></dd></dl>
+</dd></dl>
 </div>
-<div class="section" id="sortinghat-core-migrations-0008-rename-id-to-uuid-module">
-<h2>sortinghat.core.migrations.0008_rename_id_to_uuid module<a class="headerlink" href="#sortinghat-core-migrations-0008-rename-id-to-uuid-module" title="Permalink to this headline">¶</a></h2>
+<div class="section" id="module-sortinghat.core.migrations.0008_rename_id_to_uuid">
+<span id="sortinghat-core-migrations-0008-rename-id-to-uuid-module"></span><h2>sortinghat.core.migrations.0008_rename_id_to_uuid module<a class="headerlink" href="#module-sortinghat.core.migrations.0008_rename_id_to_uuid" title="Permalink to this headline">¶</a></h2>
+<dl class="py class">
+<dt class="sig sig-object py" id="sortinghat.core.migrations.0008_rename_id_to_uuid.Migration">
+<em class="property"><span class="pre">class</span> </em><span class="sig-prename descclassname"><span class="pre">sortinghat.core.migrations.0008_rename_id_to_uuid.</span></span><span class="sig-name descname"><span class="pre">Migration</span></span><span class="sig-paren">(</span><em class="sig-param"><span class="n"><span class="pre">name</span></span></em>, <em class="sig-param"><span class="n"><span class="pre">app_label</span></span></em><span class="sig-paren">)</span><a class="reference internal" href="../_modules/sortinghat/core/migrations/0008_rename_id_to_uuid.html#Migration"><span class="viewcode-link"><span class="pre">[source]</span></span></a><a class="headerlink" href="#sortinghat.core.migrations.0008_rename_id_to_uuid.Migration" title="Permalink to this definition">¶</a></dt>
+<dd><p>Bases: <code class="xref py py-class docutils literal notranslate"><span class="pre">django.db.migrations.migration.Migration</span></code></p>
+<dl class="py attribute">
+<dt class="sig sig-object py" id="sortinghat.core.migrations.0008_rename_id_to_uuid.Migration.dependencies">
+<span class="sig-name descname"><span class="pre">dependencies</span></span><em class="property"> <span class="pre">=</span> <span class="pre">[('core',</span> <span class="pre">'0007_rename_uuid_to_mk')]</span></em><a class="headerlink" href="#sortinghat.core.migrations.0008_rename_id_to_uuid.Migration.dependencies" title="Permalink to this definition">¶</a></dt>
+<dd></dd></dl>
+<dl class="py attribute">
+<dt class="sig sig-object py" id="sortinghat.core.migrations.0008_rename_id_to_uuid.Migration.operations">
+<span class="sig-name descname"><span class="pre">operations</span></span><em class="property"> <span class="pre">=</span> <span class="pre">[&lt;RenameField</span>  <span class="pre">model_name='identity',</span> <span class="pre">old_name='id',</span> <span class="pre">new_name='uuid'&gt;]</span></em><a class="headerlink" href="#sortinghat.core.migrations.0008_rename_id_to_uuid.Migration.operations" title="Permalink to this definition">¶</a></dt>
+<dd></dd></dl>
+</dd></dl>
 </div>
-<div class="section" id="sortinghat-core-migrations-0009-replace-django-mysql-module">
-<h2>sortinghat.core.migrations.0009_replace_django_mysql module<a class="headerlink" href="#sortinghat-core-migrations-0009-replace-django-mysql-module" title="Permalink to this headline">¶</a></h2>
+<div class="section" id="module-sortinghat.core.migrations.0009_replace_django_mysql">
+<span id="sortinghat-core-migrations-0009-replace-django-mysql-module"></span><h2>sortinghat.core.migrations.0009_replace_django_mysql module<a class="headerlink" href="#module-sortinghat.core.migrations.0009_replace_django_mysql" title="Permalink to this headline">¶</a></h2>
+<dl class="py class">
+<dt class="sig sig-object py" id="sortinghat.core.migrations.0009_replace_django_mysql.Migration">
+<em class="property"><span class="pre">class</span> </em><span class="sig-prename descclassname"><span class="pre">sortinghat.core.migrations.0009_replace_django_mysql.</span></span><span class="sig-name descname"><span class="pre">Migration</span></span><span class="sig-paren">(</span><em class="sig-param"><span class="n"><span class="pre">name</span></span></em>, <em class="sig-param"><span class="n"><span class="pre">app_label</span></span></em><span class="sig-paren">)</span><a class="reference internal" href="../_modules/sortinghat/core/migrations/0009_replace_django_mysql.html#Migration"><span class="viewcode-link"><span class="pre">[source]</span></span></a><a class="headerlink" href="#sortinghat.core.migrations.0009_replace_django_mysql.Migration" title="Permalink to this definition">¶</a></dt>
+<dd><p>Bases: <code class="xref py py-class docutils literal notranslate"><span class="pre">django.db.migrations.migration.Migration</span></code></p>
+<dl class="py attribute">
+<dt class="sig sig-object py" id="sortinghat.core.migrations.0009_replace_django_mysql.Migration.dependencies">
+<span class="sig-name descname"><span class="pre">dependencies</span></span><em class="property"> <span class="pre">=</span> <span class="pre">[('core',</span> <span class="pre">'0008_rename_id_to_uuid')]</span></em><a class="headerlink" href="#sortinghat.core.migrations.0009_replace_django_mysql.Migration.dependencies" title="Permalink to this definition">¶</a></dt>
+<dd></dd></dl>
+<dl class="py attribute">
+<dt class="sig sig-object py" id="sortinghat.core.migrations.0009_replace_django_mysql.Migration.operations">
+<span class="sig-name descname"><span class="pre">operations</span></span><em class="property"> <span class="pre">=</span> <span class="pre">[&lt;AlterModelOptions</span>  <span class="pre">name='individual',</span> <span class="pre">options={'ordering':</span> <span class="pre">('last_modified',</span> <span class="pre">'created_at',</span> <span class="pre">'profile__name')}&gt;,</span> <span class="pre">&lt;AlterField</span>  <span class="pre">model_name='operation',</span> <span class="pre">name='args',</span> <span class="pre">field=&lt;django.db.models.fields.json.JSONField&gt;&gt;]</span></em><a class="headerlink" href="#sortinghat.core.migrations.0009_replace_django_mysql.Migration.operations" title="Permalink to this definition">¶</a></dt>
+<dd></dd></dl>
+</dd></dl>
 </div>
 <div class="section" id="module-sortinghat.core.migrations">
 <span id="module-contents"></span><h2>Module contents<a class="headerlink" href="#module-sortinghat.core.migrations" title="Permalink to this headline">¶</a></h2>
@@ -221,14 +325,14 @@
 <li><a class="reference internal" href="#">sortinghat.core.migrations package</a><ul>
 <li><a class="reference internal" href="#submodules">Submodules</a></li>
 <li><a class="reference internal" href="#sortinghat-core-migrations-0001-initial-module">sortinghat.core.migrations.0001_initial module</a></li>
-<li><a class="reference internal" href="#sortinghat-core-migrations-0002-log-module">sortinghat.core.migrations.0002_log module</a></li>
-<li><a class="reference internal" href="#sortinghat-core-migrations-0003-context-module">sortinghat.core.migrations.0003_context module</a></li>
-<li><a class="reference internal" href="#sortinghat-core-migrations-0004-lock-module">sortinghat.core.migrations.0004_lock module</a></li>
-<li><a class="reference internal" href="#sortinghat-core-migrations-0005-individuals-module">sortinghat.core.migrations.0005_individuals module</a></li>
-<li><a class="reference internal" href="#sortinghat-core-migrations-0006-uidentity-module">sortinghat.core.migrations.0006_uidentity module</a></li>
-<li><a class="reference internal" href="#sortinghat-core-migrations-0007-rename-uuid-to-mk-module">sortinghat.core.migrations.0007_rename_uuid_to_mk module</a></li>
-<li><a class="reference internal" href="#sortinghat-core-migrations-0008-rename-id-to-uuid-module">sortinghat.core.migrations.0008_rename_id_to_uuid module</a></li>
-<li><a class="reference internal" href="#sortinghat-core-migrations-0009-replace-django-mysql-module">sortinghat.core.migrations.0009_replace_django_mysql module</a></li>
+<li><a class="reference internal" href="#module-sortinghat.core.migrations.0002_log">sortinghat.core.migrations.0002_log module</a></li>
+<li><a class="reference internal" href="#module-sortinghat.core.migrations.0003_context">sortinghat.core.migrations.0003_context module</a></li>
+<li><a class="reference internal" href="#module-sortinghat.core.migrations.0004_lock">sortinghat.core.migrations.0004_lock module</a></li>
+<li><a class="reference internal" href="#module-sortinghat.core.migrations.0005_individuals">sortinghat.core.migrations.0005_individuals module</a></li>
+<li><a class="reference internal" href="#module-sortinghat.core.migrations.0006_uidentity">sortinghat.core.migrations.0006_uidentity module</a></li>
+<li><a class="reference internal" href="#module-sortinghat.core.migrations.0007_rename_uuid_to_mk">sortinghat.core.migrations.0007_rename_uuid_to_mk module</a></li>
+<li><a class="reference internal" href="#module-sortinghat.core.migrations.0008_rename_id_to_uuid">sortinghat.core.migrations.0008_rename_id_to_uuid module</a></li>
+<li><a class="reference internal" href="#module-sortinghat.core.migrations.0009_replace_django_mysql">sortinghat.core.migrations.0009_replace_django_mysql module</a></li>
 <li><a class="reference internal" href="#module-sortinghat.core.migrations">Module contents</a></li>
 </ul>
 </li>

@@ -5,7 +5,7 @@
     <meta name="color-scheme" content="light dark"><link rel="author" title="About these documents" href="../../../about.html" /><link rel="index" title="Index" href="../../../genindex.html" /><link rel="search" title="Search" href="../../../search.html" />
 
     <meta name="generator" content="sphinx-4.1.1, furo 2021.07.05.beta38"/>
-        <title>&lt;no title&gt; - GrimoireLab Guide</title>
+        <title>sortinghat.core.apps - GrimoireLab Guide</title>
       <link rel="stylesheet" type="text/css" href="../../../_static/pygments.css" />
     <link rel="stylesheet" type="text/css" href="../../../_static/styles/furo.css" />
     <link rel="stylesheet" type="text/css" href="../../../_static/styles/furo-extensions.css" />
@@ -93,7 +93,7 @@
       <a href="../../../index.html"><div class="brand">GrimoireLab Guide</div></a>
     </div>
     <div class="header-right">
-      <label class="toc-overlay-icon toc-header-icon" for="__toc">
+      <label class="toc-overlay-icon toc-header-icon no-toc" for="__toc">
         <i class="icon"><svg><use href="#svg-toc"></use></svg></i>
       </label>
     </div>
@@ -142,17 +142,37 @@
   <main class="main">
     <div class="content">
       <article role="main">
-        <label class="toc-overlay-icon toc-content-icon" for="__toc">
+        <label class="toc-overlay-icon toc-content-icon no-toc" for="__toc">
           <i class="icon"><svg><use href="#svg-toc"></use></svg></i>
         </label>
-        <p>PLY is yet another implementation of lex and yacc for Python. Some notable
-features include the fact that its implemented entirely in Python and it
-uses LALR(1) parsing which is efficient and well suited for larger grammars.</p>
-<p>PLY provides most of the standard lex/yacc features including support for empty
-productions, precedence rules, error recovery, and support for ambiguous grammars.</p>
-<p>PLY is extremely easy to use and provides very extensive error checking.
-It is compatible with both Python 2 and Python 3.</p>
+        <h1>Source code for sortinghat.core.apps</h1><div class="highlight"><pre>
+<span></span><span class="c1"># -*- coding: utf-8 -*-</span>
+<span class="c1">#</span>
+<span class="c1"># Copyright (C) 2014-2018 Bitergia</span>
+<span class="c1">#</span>
+<span class="c1"># This program is free software; you can redistribute it and/or modify</span>
+<span class="c1"># it under the terms of the GNU General Public License as published by</span>
+<span class="c1"># the Free Software Foundation; either version 3 of the License, or</span>
+<span class="c1"># (at your option) any later version.</span>
+<span class="c1">#</span>
+<span class="c1"># This program is distributed in the hope that it will be useful,</span>
+<span class="c1"># but WITHOUT ANY WARRANTY; without even the implied warranty of</span>
+<span class="c1"># MERCHANTABILITY or FITNESS FOR A PARTICULAR PURPOSE. See the</span>
+<span class="c1"># GNU General Public License for more details.</span>
+<span class="c1">#</span>
+<span class="c1"># You should have received a copy of the GNU General Public License</span>
+<span class="c1"># along with this program. If not, see &lt;http://www.gnu.org/licenses/&gt;.</span>
+<span class="c1">#</span>
+<span class="c1"># Authors:</span>
+<span class="c1">#     Santiago Dueñas &lt;sduenas@bitergia.com&gt;</span>
+<span class="c1">#</span>
 
+<span class="kn">from</span> <span class="nn">django.apps</span> <span class="kn">import</span> <span class="n">AppConfig</span>
+
+
+<div class="viewcode-block" id="SortingHatCoreConfig"><a class="viewcode-back" href="../../../source/sortinghat.core.html#sortinghat.core.apps.SortingHatCoreConfig">[docs]</a><span class="k">class</span> <span class="nc">SortingHatCoreConfig</span><span class="p">(</span><span class="n">AppConfig</span><span class="p">):</span>
+    <span class="n">name</span> <span class="o">=</span> <span class="s1">'sortinghat.core'</span></div>
+</pre></div>
       </article>
       <footer>
         
@@ -168,32 +188,12 @@ It is compatible with both Python 2 and Python 3.</p>
               and
               <a class="muted-link" href="https://pradyunsg.me">@pradyunsg</a>'s
               <a href="https://github.com/pradyunsg/furo">Furo theme</a>.
-            |
-            <a class="muted-link" href="../../../_sources/.eggs/ply-3.11-py3.9.egg/EGG-INFO/DESCRIPTION.rst.txt"
-               rel="nofollow">
-              Show Source
-            </a>
         </div>
         
       </footer>
     </div>
-    <aside class="toc-drawer">
+    <aside class="toc-drawer no-toc">
       
-      
-      <div class="toc-sticky toc-scroll">
-        <div class="toc-title-container">
-          <span class="toc-title">
-            Contents
-          </span>
-        </div>
-        <div class="toc-tree-container">
-          <div class="toc-tree">
-            <ul class="simple">
-</ul>
-
-          </div>
-        </div>
-      </div>
       
       
     </aside>

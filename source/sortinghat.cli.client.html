@@ -4,7 +4,7 @@
     <meta name="viewport" content="width=device-width,initial-scale=1"/>
     <meta name="color-scheme" content="light dark"><link rel="author" title="About these documents" href="../about.html" /><link rel="index" title="Index" href="../genindex.html" /><link rel="search" title="Search" href="../search.html" />
 
-    <meta name="generator" content="sphinx-4.1.0, furo 2021.07.05.beta38"/>
+    <meta name="generator" content="sphinx-4.1.1, furo 2021.07.05.beta38"/>
         <title>sortinghat.cli.client package - GrimoireLab Guide</title>
       <link rel="stylesheet" type="text/css" href="../_static/pygments.css" />
     <link rel="stylesheet" type="text/css" href="../_static/styles/furo.css" />
@@ -150,14 +150,376 @@
 <div class="section" id="submodules">
 <h2>Submodules<a class="headerlink" href="#submodules" title="Permalink to this headline">¶</a></h2>
 </div>
-<div class="section" id="sortinghat-cli-client-client-module">
-<h2>sortinghat.cli.client.client module<a class="headerlink" href="#sortinghat-cli-client-client-module" title="Permalink to this headline">¶</a></h2>
+<div class="section" id="module-sortinghat.cli.client.client">
+<span id="sortinghat-cli-client-client-module"></span><h2>sortinghat.cli.client.client module<a class="headerlink" href="#module-sortinghat.cli.client.client" title="Permalink to this headline">¶</a></h2>
+<dl class="py class">
+<dt class="sig sig-object py" id="sortinghat.cli.client.client.SortingHatClient">
+<em class="property"><span class="pre">class</span> </em><span class="sig-prename descclassname"><span class="pre">sortinghat.cli.client.client.</span></span><span class="sig-name descname"><span class="pre">SortingHatClient</span></span><span class="sig-paren">(</span><em class="sig-param"><span class="n"><span class="pre">host</span></span></em>, <em class="sig-param"><span class="n"><span class="pre">port</span></span><span class="o"><span class="pre">=</span></span><span class="default_value"><span class="pre">9314</span></span></em>, <em class="sig-param"><span class="n"><span class="pre">path</span></span><span class="o"><span class="pre">=</span></span><span class="default_value"><span class="pre">None</span></span></em>, <em class="sig-param"><span class="n"><span class="pre">user</span></span><span class="o"><span class="pre">=</span></span><span class="default_value"><span class="pre">None</span></span></em>, <em class="sig-param"><span class="n"><span class="pre">password</span></span><span class="o"><span class="pre">=</span></span><span class="default_value"><span class="pre">None</span></span></em>, <em class="sig-param"><span class="n"><span class="pre">ssl</span></span><span class="o"><span class="pre">=</span></span><span class="default_value"><span class="pre">True</span></span></em><span class="sig-paren">)</span><a class="reference internal" href="../_modules/sortinghat/cli/client/client.html#SortingHatClient"><span class="viewcode-link"><span class="pre">[source]</span></span></a><a class="headerlink" href="#sortinghat.cli.client.client.SortingHatClient" title="Permalink to this definition">¶</a></dt>
+<dd><p>Bases: <code class="xref py py-class docutils literal notranslate"><span class="pre">object</span></code></p>
+<p>SortingHat client.</p>
+<p>This client allows to run operations in the SortingHat server
+that listens in <cite>host</cite> and <cite>port</cite>.</p>
+<p>After initializing an instance, call to <cite>connect</cite> to establish
+a communication with the server. The method <cite>execute</cite> allows to
+run queries and mutations defined by the server.</p>
+<dl class="field-list simple">
+<dt class="field-odd">Parameters</dt>
+<dd class="field-odd"><ul class="simple">
+<li><p><strong>host</strong> – host of the server</p></li>
+<li><p><strong>port</strong> – port number used in the connection</p></li>
+<li><p><strong>path</strong> – path to the API endpoint; by default the endpoint is in ‘/’</p></li>
+<li><p><strong>user</strong> – user name to use when authentication is required</p></li>
+<li><p><strong>password</strong> – password to use when authentication is required</p></li>
+<li><p><strong>ssl</strong> – use SSL/TSL connection; this is the default behaviour</p></li>
+</ul>
+</dd>
+<dt class="field-even">Raises</dt>
+<dd class="field-even"><p><strong>ValueError</strong> – when any of the given parameters is invalid</p>
+</dd>
+</dl>
+<dl class="py method">
+<dt class="sig sig-object py" id="sortinghat.cli.client.client.SortingHatClient.connect">
+<span class="sig-name descname"><span class="pre">connect</span></span><span class="sig-paren">(</span><span class="sig-paren">)</span><a class="reference internal" href="../_modules/sortinghat/cli/client/client.html#SortingHatClient.connect"><span class="viewcode-link"><span class="pre">[source]</span></span></a><a class="headerlink" href="#sortinghat.cli.client.client.SortingHatClient.connect" title="Permalink to this definition">¶</a></dt>
+<dd><p>Establish a connection to the server.</p>
+</dd></dl>
+<dl class="py method">
+<dt class="sig sig-object py" id="sortinghat.cli.client.client.SortingHatClient.disconnect">
+<span class="sig-name descname"><span class="pre">disconnect</span></span><span class="sig-paren">(</span><span class="sig-paren">)</span><a class="reference internal" href="../_modules/sortinghat/cli/client/client.html#SortingHatClient.disconnect"><span class="viewcode-link"><span class="pre">[source]</span></span></a><a class="headerlink" href="#sortinghat.cli.client.client.SortingHatClient.disconnect" title="Permalink to this definition">¶</a></dt>
+<dd><p>Disconnect the client from the server.</p>
+</dd></dl>
+<dl class="py method">
+<dt class="sig sig-object py" id="sortinghat.cli.client.client.SortingHatClient.execute">
+<span class="sig-name descname"><span class="pre">execute</span></span><span class="sig-paren">(</span><em class="sig-param"><span class="n"><span class="pre">operation</span></span></em><span class="sig-paren">)</span><a class="reference internal" href="../_modules/sortinghat/cli/client/client.html#SortingHatClient.execute"><span class="viewcode-link"><span class="pre">[source]</span></span></a><a class="headerlink" href="#sortinghat.cli.client.client.SortingHatClient.execute" title="Permalink to this definition">¶</a></dt>
+<dd><p>Execute operations in the server.</p>
+<p>This method allows to run GraphQL operations: queries and mutations.
+To run an operation, use <cite>sgqlc.operation.Operation</cite> object and a
+valid SortingHat schema.</p>
+<dl class="field-list simple">
+<dt class="field-odd">Parameters</dt>
+<dd class="field-odd"><p><strong>operation</strong> – GraphQL operation to execute</p>
+</dd>
+<dt class="field-even">Returns</dt>
+<dd class="field-even"><p>a dict that maps the JSON result returned by the server</p>
+</dd>
+<dt class="field-odd">Raises</dt>
+<dd class="field-odd"><p><a class="reference internal" href="#sortinghat.cli.client.client.SortingHatClient" title="sortinghat.cli.client.client.SortingHatClient"><strong>SortingHatClient</strong></a> – raised when either the client is not connected
+or when an error is returned while running the operation</p>
+</dd>
+</dl>
+</dd></dl>
+</dd></dl>
+<dl class="py exception">
+<dt class="sig sig-object py" id="sortinghat.cli.client.client.SortingHatClientError">
+<em class="property"><span class="pre">exception</span> </em><span class="sig-prename descclassname"><span class="pre">sortinghat.cli.client.client.</span></span><span class="sig-name descname"><span class="pre">SortingHatClientError</span></span><span class="sig-paren">(</span><em class="sig-param"><span class="n"><span class="pre">msg</span></span></em>, <em class="sig-param"><span class="n"><span class="pre">errors</span></span><span class="o"><span class="pre">=</span></span><span class="default_value"><span class="pre">None</span></span></em><span class="sig-paren">)</span><a class="reference internal" href="../_modules/sortinghat/cli/client/client.html#SortingHatClientError"><span class="viewcode-link"><span class="pre">[source]</span></span></a><a class="headerlink" href="#sortinghat.cli.client.client.SortingHatClientError" title="Permalink to this definition">¶</a></dt>
+<dd><p>Bases: <code class="xref py py-class docutils literal notranslate"><span class="pre">Exception</span></code></p>
+<p>SortingHat client error.</p>
+<p>Generic exception raised by the client when an error is found
+either with connection problems or with GraphQL queries.</p>
+<dl class="field-list simple">
+<dt class="field-odd">Parameters</dt>
+<dd class="field-odd"><ul class="simple">
+<li><p><strong>msg</strong> – message error</p></li>
+<li><p><strong>errors</strong> – list of GraphQL errors; <cite>None</cite> when the error is
+not related to GraphQL queries</p></li>
+</ul>
+</dd>
+</dl>
+</dd></dl>
 </div>
-<div class="section" id="sortinghat-cli-client-schema-module">
-<h2>sortinghat.cli.client.schema module<a class="headerlink" href="#sortinghat-cli-client-schema-module" title="Permalink to this headline">¶</a></h2>
+<div class="section" id="module-sortinghat.cli.client.schema">
+<span id="sortinghat-cli-client-schema-module"></span><h2>sortinghat.cli.client.schema module<a class="headerlink" href="#module-sortinghat.cli.client.schema" title="Permalink to this headline">¶</a></h2>
+<p>SortingHat client schema.</p>
+<p>Automatically generated using sgqlc tools.</p>
+<dl class="py class">
+<dt class="sig sig-object py" id="sortinghat.cli.client.schema.AddDomain">
+<em class="property"><span class="pre">class</span> </em><span class="sig-prename descclassname"><span class="pre">sortinghat.cli.client.schema.</span></span><span class="sig-name descname"><span class="pre">AddDomain</span></span><span class="sig-paren">(</span><em class="sig-param"><span class="n"><span class="pre">json_data</span></span></em>, <em class="sig-param"><span class="n"><span class="pre">selection_list</span></span><span class="o"><span class="pre">=</span></span><span class="default_value"><span class="pre">None</span></span></em><span class="sig-paren">)</span><a class="reference internal" href="../_modules/sortinghat/cli/client/schema.html#AddDomain"><span class="viewcode-link"><span class="pre">[source]</span></span></a><a class="headerlink" href="#sortinghat.cli.client.schema.AddDomain" title="Permalink to this definition">¶</a></dt>
+<dd><p>Bases: <code class="xref py py-class docutils literal notranslate"><span class="pre">sgqlc.types.Type</span></code></p>
+</dd></dl>
+<dl class="py class">
+<dt class="sig sig-object py" id="sortinghat.cli.client.schema.AddIdentity">
+<em class="property"><span class="pre">class</span> </em><span class="sig-prename descclassname"><span class="pre">sortinghat.cli.client.schema.</span></span><span class="sig-name descname"><span class="pre">AddIdentity</span></span><span class="sig-paren">(</span><em class="sig-param"><span class="n"><span class="pre">json_data</span></span></em>, <em class="sig-param"><span class="n"><span class="pre">selection_list</span></span><span class="o"><span class="pre">=</span></span><span class="default_value"><span class="pre">None</span></span></em><span class="sig-paren">)</span><a class="reference internal" href="../_modules/sortinghat/cli/client/schema.html#AddIdentity"><span class="viewcode-link"><span class="pre">[source]</span></span></a><a class="headerlink" href="#sortinghat.cli.client.schema.AddIdentity" title="Permalink to this definition">¶</a></dt>
+<dd><p>Bases: <code class="xref py py-class docutils literal notranslate"><span class="pre">sgqlc.types.Type</span></code></p>
+</dd></dl>
+<dl class="py class">
+<dt class="sig sig-object py" id="sortinghat.cli.client.schema.AddOrganization">
+<em class="property"><span class="pre">class</span> </em><span class="sig-prename descclassname"><span class="pre">sortinghat.cli.client.schema.</span></span><span class="sig-name descname"><span class="pre">AddOrganization</span></span><span class="sig-paren">(</span><em class="sig-param"><span class="n"><span class="pre">json_data</span></span></em>, <em class="sig-param"><span class="n"><span class="pre">selection_list</span></span><span class="o"><span class="pre">=</span></span><span class="default_value"><span class="pre">None</span></span></em><span class="sig-paren">)</span><a class="reference internal" href="../_modules/sortinghat/cli/client/schema.html#AddOrganization"><span class="viewcode-link"><span class="pre">[source]</span></span></a><a class="headerlink" href="#sortinghat.cli.client.schema.AddOrganization" title="Permalink to this definition">¶</a></dt>
+<dd><p>Bases: <code class="xref py py-class docutils literal notranslate"><span class="pre">sgqlc.types.Type</span></code></p>
+</dd></dl>
+<dl class="py class">
+<dt class="sig sig-object py" id="sortinghat.cli.client.schema.Affiliate">
+<em class="property"><span class="pre">class</span> </em><span class="sig-prename descclassname"><span class="pre">sortinghat.cli.client.schema.</span></span><span class="sig-name descname"><span class="pre">Affiliate</span></span><span class="sig-paren">(</span><em class="sig-param"><span class="n"><span class="pre">json_data</span></span></em>, <em class="sig-param"><span class="n"><span class="pre">selection_list</span></span><span class="o"><span class="pre">=</span></span><span class="default_value"><span class="pre">None</span></span></em><span class="sig-paren">)</span><a class="reference internal" href="../_modules/sortinghat/cli/client/schema.html#Affiliate"><span class="viewcode-link"><span class="pre">[source]</span></span></a><a class="headerlink" href="#sortinghat.cli.client.schema.Affiliate" title="Permalink to this definition">¶</a></dt>
+<dd><p>Bases: <code class="xref py py-class docutils literal notranslate"><span class="pre">sgqlc.types.Type</span></code></p>
+</dd></dl>
+<dl class="py class">
+<dt class="sig sig-object py" id="sortinghat.cli.client.schema.AffiliationRecommendationType">
+<em class="property"><span class="pre">class</span> </em><span class="sig-prename descclassname"><span class="pre">sortinghat.cli.client.schema.</span></span><span class="sig-name descname"><span class="pre">AffiliationRecommendationType</span></span><span class="sig-paren">(</span><em class="sig-param"><span class="n"><span class="pre">json_data</span></span></em>, <em class="sig-param"><span class="n"><span class="pre">selection_list</span></span><span class="o"><span class="pre">=</span></span><span class="default_value"><span class="pre">None</span></span></em><span class="sig-paren">)</span><a class="reference internal" href="../_modules/sortinghat/cli/client/schema.html#AffiliationRecommendationType"><span class="viewcode-link"><span class="pre">[source]</span></span></a><a class="headerlink" href="#sortinghat.cli.client.schema.AffiliationRecommendationType" title="Permalink to this definition">¶</a></dt>
+<dd><p>Bases: <code class="xref py py-class docutils literal notranslate"><span class="pre">sgqlc.types.Type</span></code></p>
+</dd></dl>
+<dl class="py class">
+<dt class="sig sig-object py" id="sortinghat.cli.client.schema.AffiliationResultType">
+<em class="property"><span class="pre">class</span> </em><span class="sig-prename descclassname"><span class="pre">sortinghat.cli.client.schema.</span></span><span class="sig-name descname"><span class="pre">AffiliationResultType</span></span><span class="sig-paren">(</span><em class="sig-param"><span class="n"><span class="pre">json_data</span></span></em>, <em class="sig-param"><span class="n"><span class="pre">selection_list</span></span><span class="o"><span class="pre">=</span></span><span class="default_value"><span class="pre">None</span></span></em><span class="sig-paren">)</span><a class="reference internal" href="../_modules/sortinghat/cli/client/schema.html#AffiliationResultType"><span class="viewcode-link"><span class="pre">[source]</span></span></a><a class="headerlink" href="#sortinghat.cli.client.schema.AffiliationResultType" title="Permalink to this definition">¶</a></dt>
+<dd><p>Bases: <code class="xref py py-class docutils literal notranslate"><span class="pre">sgqlc.types.Type</span></code></p>
+</dd></dl>
+<dl class="py class">
+<dt class="sig sig-object py" id="sortinghat.cli.client.schema.CountryFilterType">
+<em class="property"><span class="pre">class</span> </em><span class="sig-prename descclassname"><span class="pre">sortinghat.cli.client.schema.</span></span><span class="sig-name descname"><span class="pre">CountryFilterType</span></span><span class="sig-paren">(</span><em class="sig-param"><span class="n"><span class="pre">_json_obj</span></span><span class="o"><span class="pre">=</span></span><span class="default_value"><span class="pre">None</span></span></em>, <em class="sig-param"><span class="n"><span class="pre">_selection_list</span></span><span class="o"><span class="pre">=</span></span><span class="default_value"><span class="pre">None</span></span></em>, <em class="sig-param"><span class="o"><span class="pre">**</span></span><span class="n"><span class="pre">kwargs</span></span></em><span class="sig-paren">)</span><a class="reference internal" href="../_modules/sortinghat/cli/client/schema.html#CountryFilterType"><span class="viewcode-link"><span class="pre">[source]</span></span></a><a class="headerlink" href="#sortinghat.cli.client.schema.CountryFilterType" title="Permalink to this definition">¶</a></dt>
+<dd><p>Bases: <code class="xref py py-class docutils literal notranslate"><span class="pre">sgqlc.types.Input</span></code></p>
+</dd></dl>
+<dl class="py class">
+<dt class="sig sig-object py" id="sortinghat.cli.client.schema.CountryPaginatedType">
+<em class="property"><span class="pre">class</span> </em><span class="sig-prename descclassname"><span class="pre">sortinghat.cli.client.schema.</span></span><span class="sig-name descname"><span class="pre">CountryPaginatedType</span></span><span class="sig-paren">(</span><em class="sig-param"><span class="n"><span class="pre">json_data</span></span></em>, <em class="sig-param"><span class="n"><span class="pre">selection_list</span></span><span class="o"><span class="pre">=</span></span><span class="default_value"><span class="pre">None</span></span></em><span class="sig-paren">)</span><a class="reference internal" href="../_modules/sortinghat/cli/client/schema.html#CountryPaginatedType"><span class="viewcode-link"><span class="pre">[source]</span></span></a><a class="headerlink" href="#sortinghat.cli.client.schema.CountryPaginatedType" title="Permalink to this definition">¶</a></dt>
+<dd><p>Bases: <code class="xref py py-class docutils literal notranslate"><span class="pre">sgqlc.types.Type</span></code></p>
+</dd></dl>
+<dl class="py class">
+<dt class="sig sig-object py" id="sortinghat.cli.client.schema.CountryType">
+<em class="property"><span class="pre">class</span> </em><span class="sig-prename descclassname"><span class="pre">sortinghat.cli.client.schema.</span></span><span class="sig-name descname"><span class="pre">CountryType</span></span><span class="sig-paren">(</span><em class="sig-param"><span class="n"><span class="pre">json_data</span></span></em>, <em class="sig-param"><span class="n"><span class="pre">selection_list</span></span><span class="o"><span class="pre">=</span></span><span class="default_value"><span class="pre">None</span></span></em><span class="sig-paren">)</span><a class="reference internal" href="../_modules/sortinghat/cli/client/schema.html#CountryType"><span class="viewcode-link"><span class="pre">[source]</span></span></a><a class="headerlink" href="#sortinghat.cli.client.schema.CountryType" title="Permalink to this definition">¶</a></dt>
+<dd><p>Bases: <code class="xref py py-class docutils literal notranslate"><span class="pre">sgqlc.types.Type</span></code></p>
+</dd></dl>
+<dl class="py class">
+<dt class="sig sig-object py" id="sortinghat.cli.client.schema.DeleteDomain">
+<em class="property"><span class="pre">class</span> </em><span class="sig-prename descclassname"><span class="pre">sortinghat.cli.client.schema.</span></span><span class="sig-name descname"><span class="pre">DeleteDomain</span></span><span class="sig-paren">(</span><em class="sig-param"><span class="n"><span class="pre">json_data</span></span></em>, <em class="sig-param"><span class="n"><span class="pre">selection_list</span></span><span class="o"><span class="pre">=</span></span><span class="default_value"><span class="pre">None</span></span></em><span class="sig-paren">)</span><a class="reference internal" href="../_modules/sortinghat/cli/client/schema.html#DeleteDomain"><span class="viewcode-link"><span class="pre">[source]</span></span></a><a class="headerlink" href="#sortinghat.cli.client.schema.DeleteDomain" title="Permalink to this definition">¶</a></dt>
+<dd><p>Bases: <code class="xref py py-class docutils literal notranslate"><span class="pre">sgqlc.types.Type</span></code></p>
+</dd></dl>
+<dl class="py class">
+<dt class="sig sig-object py" id="sortinghat.cli.client.schema.DeleteIdentity">
+<em class="property"><span class="pre">class</span> </em><span class="sig-prename descclassname"><span class="pre">sortinghat.cli.client.schema.</span></span><span class="sig-name descname"><span class="pre">DeleteIdentity</span></span><span class="sig-paren">(</span><em class="sig-param"><span class="n"><span class="pre">json_data</span></span></em>, <em class="sig-param"><span class="n"><span class="pre">selection_list</span></span><span class="o"><span class="pre">=</span></span><span class="default_value"><span class="pre">None</span></span></em><span class="sig-paren">)</span><a class="reference internal" href="../_modules/sortinghat/cli/client/schema.html#DeleteIdentity"><span class="viewcode-link"><span class="pre">[source]</span></span></a><a class="headerlink" href="#sortinghat.cli.client.schema.DeleteIdentity" title="Permalink to this definition">¶</a></dt>
+<dd><p>Bases: <code class="xref py py-class docutils literal notranslate"><span class="pre">sgqlc.types.Type</span></code></p>
+</dd></dl>
+<dl class="py class">
+<dt class="sig sig-object py" id="sortinghat.cli.client.schema.DeleteOrganization">
+<em class="property"><span class="pre">class</span> </em><span class="sig-prename descclassname"><span class="pre">sortinghat.cli.client.schema.</span></span><span class="sig-name descname"><span class="pre">DeleteOrganization</span></span><span class="sig-paren">(</span><em class="sig-param"><span class="n"><span class="pre">json_data</span></span></em>, <em class="sig-param"><span class="n"><span class="pre">selection_list</span></span><span class="o"><span class="pre">=</span></span><span class="default_value"><span class="pre">None</span></span></em><span class="sig-paren">)</span><a class="reference internal" href="../_modules/sortinghat/cli/client/schema.html#DeleteOrganization"><span class="viewcode-link"><span class="pre">[source]</span></span></a><a class="headerlink" href="#sortinghat.cli.client.schema.DeleteOrganization" title="Permalink to this definition">¶</a></dt>
+<dd><p>Bases: <code class="xref py py-class docutils literal notranslate"><span class="pre">sgqlc.types.Type</span></code></p>
+</dd></dl>
+<dl class="py class">
+<dt class="sig sig-object py" id="sortinghat.cli.client.schema.DomainType">
+<em class="property"><span class="pre">class</span> </em><span class="sig-prename descclassname"><span class="pre">sortinghat.cli.client.schema.</span></span><span class="sig-name descname"><span class="pre">DomainType</span></span><span class="sig-paren">(</span><em class="sig-param"><span class="n"><span class="pre">json_data</span></span></em>, <em class="sig-param"><span class="n"><span class="pre">selection_list</span></span><span class="o"><span class="pre">=</span></span><span class="default_value"><span class="pre">None</span></span></em><span class="sig-paren">)</span><a class="reference internal" href="../_modules/sortinghat/cli/client/schema.html#DomainType"><span class="viewcode-link"><span class="pre">[source]</span></span></a><a class="headerlink" href="#sortinghat.cli.client.schema.DomainType" title="Permalink to this definition">¶</a></dt>
+<dd><p>Bases: <code class="xref py py-class docutils literal notranslate"><span class="pre">sgqlc.types.Type</span></code></p>
+</dd></dl>
+<dl class="py class">
+<dt class="sig sig-object py" id="sortinghat.cli.client.schema.Enroll">
+<em class="property"><span class="pre">class</span> </em><span class="sig-prename descclassname"><span class="pre">sortinghat.cli.client.schema.</span></span><span class="sig-name descname"><span class="pre">Enroll</span></span><span class="sig-paren">(</span><em class="sig-param"><span class="n"><span class="pre">json_data</span></span></em>, <em class="sig-param"><span class="n"><span class="pre">selection_list</span></span><span class="o"><span class="pre">=</span></span><span class="default_value"><span class="pre">None</span></span></em><span class="sig-paren">)</span><a class="reference internal" href="../_modules/sortinghat/cli/client/schema.html#Enroll"><span class="viewcode-link"><span class="pre">[source]</span></span></a><a class="headerlink" href="#sortinghat.cli.client.schema.Enroll" title="Permalink to this definition">¶</a></dt>
+<dd><p>Bases: <code class="xref py py-class docutils literal notranslate"><span class="pre">sgqlc.types.Type</span></code></p>
+</dd></dl>
+<dl class="py class">
+<dt class="sig sig-object py" id="sortinghat.cli.client.schema.EnrollmentType">
+<em class="property"><span class="pre">class</span> </em><span class="sig-prename descclassname"><span class="pre">sortinghat.cli.client.schema.</span></span><span class="sig-name descname"><span class="pre">EnrollmentType</span></span><span class="sig-paren">(</span><em class="sig-param"><span class="n"><span class="pre">json_data</span></span></em>, <em class="sig-param"><span class="n"><span class="pre">selection_list</span></span><span class="o"><span class="pre">=</span></span><span class="default_value"><span class="pre">None</span></span></em><span class="sig-paren">)</span><a class="reference internal" href="../_modules/sortinghat/cli/client/schema.html#EnrollmentType"><span class="viewcode-link"><span class="pre">[source]</span></span></a><a class="headerlink" href="#sortinghat.cli.client.schema.EnrollmentType" title="Permalink to this definition">¶</a></dt>
+<dd><p>Bases: <code class="xref py py-class docutils literal notranslate"><span class="pre">sgqlc.types.Type</span></code></p>
+</dd></dl>
+<dl class="py class">
+<dt class="sig sig-object py" id="sortinghat.cli.client.schema.GenericScalar">
+<em class="property"><span class="pre">class</span> </em><span class="sig-prename descclassname"><span class="pre">sortinghat.cli.client.schema.</span></span><span class="sig-name descname"><span class="pre">GenericScalar</span></span><span class="sig-paren">(</span><em class="sig-param"><span class="n"><span class="pre">json_data</span></span></em>, <em class="sig-param"><span class="n"><span class="pre">selection_list</span></span><span class="o"><span class="pre">=</span></span><span class="default_value"><span class="pre">None</span></span></em><span class="sig-paren">)</span><a class="reference internal" href="../_modules/sortinghat/cli/client/schema.html#GenericScalar"><span class="viewcode-link"><span class="pre">[source]</span></span></a><a class="headerlink" href="#sortinghat.cli.client.schema.GenericScalar" title="Permalink to this definition">¶</a></dt>
+<dd><p>Bases: <code class="xref py py-class docutils literal notranslate"><span class="pre">sgqlc.types.Scalar</span></code></p>
+</dd></dl>
+<dl class="py class">
+<dt class="sig sig-object py" id="sortinghat.cli.client.schema.IdentityFilterType">
+<em class="property"><span class="pre">class</span> </em><span class="sig-prename descclassname"><span class="pre">sortinghat.cli.client.schema.</span></span><span class="sig-name descname"><span class="pre">IdentityFilterType</span></span><span class="sig-paren">(</span><em class="sig-param"><span class="n"><span class="pre">_json_obj</span></span><span class="o"><span class="pre">=</span></span><span class="default_value"><span class="pre">None</span></span></em>, <em class="sig-param"><span class="n"><span class="pre">_selection_list</span></span><span class="o"><span class="pre">=</span></span><span class="default_value"><span class="pre">None</span></span></em>, <em class="sig-param"><span class="o"><span class="pre">**</span></span><span class="n"><span class="pre">kwargs</span></span></em><span class="sig-paren">)</span><a class="reference internal" href="../_modules/sortinghat/cli/client/schema.html#IdentityFilterType"><span class="viewcode-link"><span class="pre">[source]</span></span></a><a class="headerlink" href="#sortinghat.cli.client.schema.IdentityFilterType" title="Permalink to this definition">¶</a></dt>
+<dd><p>Bases: <code class="xref py py-class docutils literal notranslate"><span class="pre">sgqlc.types.Input</span></code></p>
+</dd></dl>
+<dl class="py class">
+<dt class="sig sig-object py" id="sortinghat.cli.client.schema.IdentityPaginatedType">
+<em class="property"><span class="pre">class</span> </em><span class="sig-prename descclassname"><span class="pre">sortinghat.cli.client.schema.</span></span><span class="sig-name descname"><span class="pre">IdentityPaginatedType</span></span><span class="sig-paren">(</span><em class="sig-param"><span class="n"><span class="pre">json_data</span></span></em>, <em class="sig-param"><span class="n"><span class="pre">selection_list</span></span><span class="o"><span class="pre">=</span></span><span class="default_value"><span class="pre">None</span></span></em><span class="sig-paren">)</span><a class="reference internal" href="../_modules/sortinghat/cli/client/schema.html#IdentityPaginatedType"><span class="viewcode-link"><span class="pre">[source]</span></span></a><a class="headerlink" href="#sortinghat.cli.client.schema.IdentityPaginatedType" title="Permalink to this definition">¶</a></dt>
+<dd><p>Bases: <code class="xref py py-class docutils literal notranslate"><span class="pre">sgqlc.types.Type</span></code></p>
+</dd></dl>
+<dl class="py class">
+<dt class="sig sig-object py" id="sortinghat.cli.client.schema.IdentityType">
+<em class="property"><span class="pre">class</span> </em><span class="sig-prename descclassname"><span class="pre">sortinghat.cli.client.schema.</span></span><span class="sig-name descname"><span class="pre">IdentityType</span></span><span class="sig-paren">(</span><em class="sig-param"><span class="n"><span class="pre">json_data</span></span></em>, <em class="sig-param"><span class="n"><span class="pre">selection_list</span></span><span class="o"><span class="pre">=</span></span><span class="default_value"><span class="pre">None</span></span></em><span class="sig-paren">)</span><a class="reference internal" href="../_modules/sortinghat/cli/client/schema.html#IdentityType"><span class="viewcode-link"><span class="pre">[source]</span></span></a><a class="headerlink" href="#sortinghat.cli.client.schema.IdentityType" title="Permalink to this definition">¶</a></dt>
+<dd><p>Bases: <code class="xref py py-class docutils literal notranslate"><span class="pre">sgqlc.types.Type</span></code></p>
+</dd></dl>
+<dl class="py class">
+<dt class="sig sig-object py" id="sortinghat.cli.client.schema.IndividualType">
+<em class="property"><span class="pre">class</span> </em><span class="sig-prename descclassname"><span class="pre">sortinghat.cli.client.schema.</span></span><span class="sig-name descname"><span class="pre">IndividualType</span></span><span class="sig-paren">(</span><em class="sig-param"><span class="n"><span class="pre">json_data</span></span></em>, <em class="sig-param"><span class="n"><span class="pre">selection_list</span></span><span class="o"><span class="pre">=</span></span><span class="default_value"><span class="pre">None</span></span></em><span class="sig-paren">)</span><a class="reference internal" href="../_modules/sortinghat/cli/client/schema.html#IndividualType"><span class="viewcode-link"><span class="pre">[source]</span></span></a><a class="headerlink" href="#sortinghat.cli.client.schema.IndividualType" title="Permalink to this definition">¶</a></dt>
+<dd><p>Bases: <code class="xref py py-class docutils literal notranslate"><span class="pre">sgqlc.types.Type</span></code></p>
+</dd></dl>
+<dl class="py class">
+<dt class="sig sig-object py" id="sortinghat.cli.client.schema.JobPaginatedType">
+<em class="property"><span class="pre">class</span> </em><span class="sig-prename descclassname"><span class="pre">sortinghat.cli.client.schema.</span></span><span class="sig-name descname"><span class="pre">JobPaginatedType</span></span><span class="sig-paren">(</span><em class="sig-param"><span class="n"><span class="pre">json_data</span></span></em>, <em class="sig-param"><span class="n"><span class="pre">selection_list</span></span><span class="o"><span class="pre">=</span></span><span class="default_value"><span class="pre">None</span></span></em><span class="sig-paren">)</span><a class="reference internal" href="../_modules/sortinghat/cli/client/schema.html#JobPaginatedType"><span class="viewcode-link"><span class="pre">[source]</span></span></a><a class="headerlink" href="#sortinghat.cli.client.schema.JobPaginatedType" title="Permalink to this definition">¶</a></dt>
+<dd><p>Bases: <code class="xref py py-class docutils literal notranslate"><span class="pre">sgqlc.types.Type</span></code></p>
+</dd></dl>
+<dl class="py class">
+<dt class="sig sig-object py" id="sortinghat.cli.client.schema.JobResultType">
+<em class="property"><span class="pre">class</span> </em><span class="sig-prename descclassname"><span class="pre">sortinghat.cli.client.schema.</span></span><span class="sig-name descname"><span class="pre">JobResultType</span></span><span class="sig-paren">(</span><em class="sig-param"><span class="n"><span class="pre">json_data</span></span></em>, <em class="sig-param"><span class="n"><span class="pre">selection_list</span></span><span class="o"><span class="pre">=</span></span><span class="default_value"><span class="pre">None</span></span></em><span class="sig-paren">)</span><a class="reference internal" href="../_modules/sortinghat/cli/client/schema.html#JobResultType"><span class="viewcode-link"><span class="pre">[source]</span></span></a><a class="headerlink" href="#sortinghat.cli.client.schema.JobResultType" title="Permalink to this definition">¶</a></dt>
+<dd><p>Bases: <code class="xref py py-class docutils literal notranslate"><span class="pre">sgqlc.types.Union</span></code></p>
+</dd></dl>
+<dl class="py class">
+<dt class="sig sig-object py" id="sortinghat.cli.client.schema.JobType">
+<em class="property"><span class="pre">class</span> </em><span class="sig-prename descclassname"><span class="pre">sortinghat.cli.client.schema.</span></span><span class="sig-name descname"><span class="pre">JobType</span></span><span class="sig-paren">(</span><em class="sig-param"><span class="n"><span class="pre">json_data</span></span></em>, <em class="sig-param"><span class="n"><span class="pre">selection_list</span></span><span class="o"><span class="pre">=</span></span><span class="default_value"><span class="pre">None</span></span></em><span class="sig-paren">)</span><a class="reference internal" href="../_modules/sortinghat/cli/client/schema.html#JobType"><span class="viewcode-link"><span class="pre">[source]</span></span></a><a class="headerlink" href="#sortinghat.cli.client.schema.JobType" title="Permalink to this definition">¶</a></dt>
+<dd><p>Bases: <code class="xref py py-class docutils literal notranslate"><span class="pre">sgqlc.types.Type</span></code></p>
+</dd></dl>
+<dl class="py class">
+<dt class="sig sig-object py" id="sortinghat.cli.client.schema.Lock">
+<em class="property"><span class="pre">class</span> </em><span class="sig-prename descclassname"><span class="pre">sortinghat.cli.client.schema.</span></span><span class="sig-name descname"><span class="pre">Lock</span></span><span class="sig-paren">(</span><em class="sig-param"><span class="n"><span class="pre">json_data</span></span></em>, <em class="sig-param"><span class="n"><span class="pre">selection_list</span></span><span class="o"><span class="pre">=</span></span><span class="default_value"><span class="pre">None</span></span></em><span class="sig-paren">)</span><a class="reference internal" href="../_modules/sortinghat/cli/client/schema.html#Lock"><span class="viewcode-link"><span class="pre">[source]</span></span></a><a class="headerlink" href="#sortinghat.cli.client.schema.Lock" title="Permalink to this definition">¶</a></dt>
+<dd><p>Bases: <code class="xref py py-class docutils literal notranslate"><span class="pre">sgqlc.types.Type</span></code></p>
+</dd></dl>
+<dl class="py class">
+<dt class="sig sig-object py" id="sortinghat.cli.client.schema.MatchesRecommendationType">
+<em class="property"><span class="pre">class</span> </em><span class="sig-prename descclassname"><span class="pre">sortinghat.cli.client.schema.</span></span><span class="sig-name descname"><span class="pre">MatchesRecommendationType</span></span><span class="sig-paren">(</span><em class="sig-param"><span class="n"><span class="pre">json_data</span></span></em>, <em class="sig-param"><span class="n"><span class="pre">selection_list</span></span><span class="o"><span class="pre">=</span></span><span class="default_value"><span class="pre">None</span></span></em><span class="sig-paren">)</span><a class="reference internal" href="../_modules/sortinghat/cli/client/schema.html#MatchesRecommendationType"><span class="viewcode-link"><span class="pre">[source]</span></span></a><a class="headerlink" href="#sortinghat.cli.client.schema.MatchesRecommendationType" title="Permalink to this definition">¶</a></dt>
+<dd><p>Bases: <code class="xref py py-class docutils literal notranslate"><span class="pre">sgqlc.types.Type</span></code></p>
+</dd></dl>
+<dl class="py class">
+<dt class="sig sig-object py" id="sortinghat.cli.client.schema.Merge">
+<em class="property"><span class="pre">class</span> </em><span class="sig-prename descclassname"><span class="pre">sortinghat.cli.client.schema.</span></span><span class="sig-name descname"><span class="pre">Merge</span></span><span class="sig-paren">(</span><em class="sig-param"><span class="n"><span class="pre">json_data</span></span></em>, <em class="sig-param"><span class="n"><span class="pre">selection_list</span></span><span class="o"><span class="pre">=</span></span><span class="default_value"><span class="pre">None</span></span></em><span class="sig-paren">)</span><a class="reference internal" href="../_modules/sortinghat/cli/client/schema.html#Merge"><span class="viewcode-link"><span class="pre">[source]</span></span></a><a class="headerlink" href="#sortinghat.cli.client.schema.Merge" title="Permalink to this definition">¶</a></dt>
+<dd><p>Bases: <code class="xref py py-class docutils literal notranslate"><span class="pre">sgqlc.types.Type</span></code></p>
+</dd></dl>
+<dl class="py class">
+<dt class="sig sig-object py" id="sortinghat.cli.client.schema.MoveIdentity">
+<em class="property"><span class="pre">class</span> </em><span class="sig-prename descclassname"><span class="pre">sortinghat.cli.client.schema.</span></span><span class="sig-name descname"><span class="pre">MoveIdentity</span></span><span class="sig-paren">(</span><em class="sig-param"><span class="n"><span class="pre">json_data</span></span></em>, <em class="sig-param"><span class="n"><span class="pre">selection_list</span></span><span class="o"><span class="pre">=</span></span><span class="default_value"><span class="pre">None</span></span></em><span class="sig-paren">)</span><a class="reference internal" href="../_modules/sortinghat/cli/client/schema.html#MoveIdentity"><span class="viewcode-link"><span class="pre">[source]</span></span></a><a class="headerlink" href="#sortinghat.cli.client.schema.MoveIdentity" title="Permalink to this definition">¶</a></dt>
+<dd><p>Bases: <code class="xref py py-class docutils literal notranslate"><span class="pre">sgqlc.types.Type</span></code></p>
+</dd></dl>
+<dl class="py class">
+<dt class="sig sig-object py" id="sortinghat.cli.client.schema.ObtainJSONWebToken">
+<em class="property"><span class="pre">class</span> </em><span class="sig-prename descclassname"><span class="pre">sortinghat.cli.client.schema.</span></span><span class="sig-name descname"><span class="pre">ObtainJSONWebToken</span></span><span class="sig-paren">(</span><em class="sig-param"><span class="n"><span class="pre">json_data</span></span></em>, <em class="sig-param"><span class="n"><span class="pre">selection_list</span></span><span class="o"><span class="pre">=</span></span><span class="default_value"><span class="pre">None</span></span></em><span class="sig-paren">)</span><a class="reference internal" href="../_modules/sortinghat/cli/client/schema.html#ObtainJSONWebToken"><span class="viewcode-link"><span class="pre">[source]</span></span></a><a class="headerlink" href="#sortinghat.cli.client.schema.ObtainJSONWebToken" title="Permalink to this definition">¶</a></dt>
+<dd><p>Bases: <code class="xref py py-class docutils literal notranslate"><span class="pre">sgqlc.types.Type</span></code></p>
+</dd></dl>
+<dl class="py class">
+<dt class="sig sig-object py" id="sortinghat.cli.client.schema.OperationArgsType">
+<em class="property"><span class="pre">class</span> </em><span class="sig-prename descclassname"><span class="pre">sortinghat.cli.client.schema.</span></span><span class="sig-name descname"><span class="pre">OperationArgsType</span></span><span class="sig-paren">(</span><em class="sig-param"><span class="n"><span class="pre">json_data</span></span></em>, <em class="sig-param"><span class="n"><span class="pre">selection_list</span></span><span class="o"><span class="pre">=</span></span><span class="default_value"><span class="pre">None</span></span></em><span class="sig-paren">)</span><a class="reference internal" href="../_modules/sortinghat/cli/client/schema.html#OperationArgsType"><span class="viewcode-link"><span class="pre">[source]</span></span></a><a class="headerlink" href="#sortinghat.cli.client.schema.OperationArgsType" title="Permalink to this definition">¶</a></dt>
+<dd><p>Bases: <code class="xref py py-class docutils literal notranslate"><span class="pre">sgqlc.types.Scalar</span></code></p>
+</dd></dl>
+<dl class="py class">
+<dt class="sig sig-object py" id="sortinghat.cli.client.schema.OperationFilterType">
+<em class="property"><span class="pre">class</span> </em><span class="sig-prename descclassname"><span class="pre">sortinghat.cli.client.schema.</span></span><span class="sig-name descname"><span class="pre">OperationFilterType</span></span><span class="sig-paren">(</span><em class="sig-param"><span class="n"><span class="pre">_json_obj</span></span><span class="o"><span class="pre">=</span></span><span class="default_value"><span class="pre">None</span></span></em>, <em class="sig-param"><span class="n"><span class="pre">_selection_list</span></span><span class="o"><span class="pre">=</span></span><span class="default_value"><span class="pre">None</span></span></em>, <em class="sig-param"><span class="o"><span class="pre">**</span></span><span class="n"><span class="pre">kwargs</span></span></em><span class="sig-paren">)</span><a class="reference internal" href="../_modules/sortinghat/cli/client/schema.html#OperationFilterType"><span class="viewcode-link"><span class="pre">[source]</span></span></a><a class="headerlink" href="#sortinghat.cli.client.schema.OperationFilterType" title="Permalink to this definition">¶</a></dt>
+<dd><p>Bases: <code class="xref py py-class docutils literal notranslate"><span class="pre">sgqlc.types.Input</span></code></p>
+</dd></dl>
+<dl class="py class">
+<dt class="sig sig-object py" id="sortinghat.cli.client.schema.OperationOpType">
+<em class="property"><span class="pre">class</span> </em><span class="sig-prename descclassname"><span class="pre">sortinghat.cli.client.schema.</span></span><span class="sig-name descname"><span class="pre">OperationOpType</span></span><span class="sig-paren">(</span><em class="sig-param"><span class="n"><span class="pre">json_data</span></span></em>, <em class="sig-param"><span class="n"><span class="pre">selection_list</span></span><span class="o"><span class="pre">=</span></span><span class="default_value"><span class="pre">None</span></span></em><span class="sig-paren">)</span><a class="reference internal" href="../_modules/sortinghat/cli/client/schema.html#OperationOpType"><span class="viewcode-link"><span class="pre">[source]</span></span></a><a class="headerlink" href="#sortinghat.cli.client.schema.OperationOpType" title="Permalink to this definition">¶</a></dt>
+<dd><p>Bases: <code class="xref py py-class docutils literal notranslate"><span class="pre">sgqlc.types.Enum</span></code></p>
+<dl class="py attribute">
+<dt class="sig sig-object py" id="sortinghat.cli.client.schema.OperationOpType.ADD">
+<span class="sig-name descname"><span class="pre">ADD</span></span><em class="property"> <span class="pre">=</span> <span class="pre">'ADD'</span></em><a class="headerlink" href="#sortinghat.cli.client.schema.OperationOpType.ADD" title="Permalink to this definition">¶</a></dt>
+<dd></dd></dl>
+<dl class="py attribute">
+<dt class="sig sig-object py" id="sortinghat.cli.client.schema.OperationOpType.DELETE">
+<span class="sig-name descname"><span class="pre">DELETE</span></span><em class="property"> <span class="pre">=</span> <span class="pre">'DELETE'</span></em><a class="headerlink" href="#sortinghat.cli.client.schema.OperationOpType.DELETE" title="Permalink to this definition">¶</a></dt>
+<dd></dd></dl>
+<dl class="py attribute">
+<dt class="sig sig-object py" id="sortinghat.cli.client.schema.OperationOpType.UPDATE">
+<span class="sig-name descname"><span class="pre">UPDATE</span></span><em class="property"> <span class="pre">=</span> <span class="pre">'UPDATE'</span></em><a class="headerlink" href="#sortinghat.cli.client.schema.OperationOpType.UPDATE" title="Permalink to this definition">¶</a></dt>
+<dd></dd></dl>
+</dd></dl>
+<dl class="py class">
+<dt class="sig sig-object py" id="sortinghat.cli.client.schema.OperationPaginatedType">
+<em class="property"><span class="pre">class</span> </em><span class="sig-prename descclassname"><span class="pre">sortinghat.cli.client.schema.</span></span><span class="sig-name descname"><span class="pre">OperationPaginatedType</span></span><span class="sig-paren">(</span><em class="sig-param"><span class="n"><span class="pre">json_data</span></span></em>, <em class="sig-param"><span class="n"><span class="pre">selection_list</span></span><span class="o"><span class="pre">=</span></span><span class="default_value"><span class="pre">None</span></span></em><span class="sig-paren">)</span><a class="reference internal" href="../_modules/sortinghat/cli/client/schema.html#OperationPaginatedType"><span class="viewcode-link"><span class="pre">[source]</span></span></a><a class="headerlink" href="#sortinghat.cli.client.schema.OperationPaginatedType" title="Permalink to this definition">¶</a></dt>
+<dd><p>Bases: <code class="xref py py-class docutils literal notranslate"><span class="pre">sgqlc.types.Type</span></code></p>
+</dd></dl>
+<dl class="py class">
+<dt class="sig sig-object py" id="sortinghat.cli.client.schema.OperationType">
+<em class="property"><span class="pre">class</span> </em><span class="sig-prename descclassname"><span class="pre">sortinghat.cli.client.schema.</span></span><span class="sig-name descname"><span class="pre">OperationType</span></span><span class="sig-paren">(</span><em class="sig-param"><span class="n"><span class="pre">json_data</span></span></em>, <em class="sig-param"><span class="n"><span class="pre">selection_list</span></span><span class="o"><span class="pre">=</span></span><span class="default_value"><span class="pre">None</span></span></em><span class="sig-paren">)</span><a class="reference internal" href="../_modules/sortinghat/cli/client/schema.html#OperationType"><span class="viewcode-link"><span class="pre">[source]</span></span></a><a class="headerlink" href="#sortinghat.cli.client.schema.OperationType" title="Permalink to this definition">¶</a></dt>
+<dd><p>Bases: <code class="xref py py-class docutils literal notranslate"><span class="pre">sgqlc.types.Type</span></code></p>
+</dd></dl>
+<dl class="py class">
+<dt class="sig sig-object py" id="sortinghat.cli.client.schema.OrganizationFilterType">
+<em class="property"><span class="pre">class</span> </em><span class="sig-prename descclassname"><span class="pre">sortinghat.cli.client.schema.</span></span><span class="sig-name descname"><span class="pre">OrganizationFilterType</span></span><span class="sig-paren">(</span><em class="sig-param"><span class="n"><span class="pre">_json_obj</span></span><span class="o"><span class="pre">=</span></span><span class="default_value"><span class="pre">None</span></span></em>, <em class="sig-param"><span class="n"><span class="pre">_selection_list</span></span><span class="o"><span class="pre">=</span></span><span class="default_value"><span class="pre">None</span></span></em>, <em class="sig-param"><span class="o"><span class="pre">**</span></span><span class="n"><span class="pre">kwargs</span></span></em><span class="sig-paren">)</span><a class="reference internal" href="../_modules/sortinghat/cli/client/schema.html#OrganizationFilterType"><span class="viewcode-link"><span class="pre">[source]</span></span></a><a class="headerlink" href="#sortinghat.cli.client.schema.OrganizationFilterType" title="Permalink to this definition">¶</a></dt>
+<dd><p>Bases: <code class="xref py py-class docutils literal notranslate"><span class="pre">sgqlc.types.Input</span></code></p>
+</dd></dl>
+<dl class="py class">
+<dt class="sig sig-object py" id="sortinghat.cli.client.schema.OrganizationPaginatedType">
+<em class="property"><span class="pre">class</span> </em><span class="sig-prename descclassname"><span class="pre">sortinghat.cli.client.schema.</span></span><span class="sig-name descname"><span class="pre">OrganizationPaginatedType</span></span><span class="sig-paren">(</span><em class="sig-param"><span class="n"><span class="pre">json_data</span></span></em>, <em class="sig-param"><span class="n"><span class="pre">selection_list</span></span><span class="o"><span class="pre">=</span></span><span class="default_value"><span class="pre">None</span></span></em><span class="sig-paren">)</span><a class="reference internal" href="../_modules/sortinghat/cli/client/schema.html#OrganizationPaginatedType"><span class="viewcode-link"><span class="pre">[source]</span></span></a><a class="headerlink" href="#sortinghat.cli.client.schema.OrganizationPaginatedType" title="Permalink to this definition">¶</a></dt>
+<dd><p>Bases: <code class="xref py py-class docutils literal notranslate"><span class="pre">sgqlc.types.Type</span></code></p>
+</dd></dl>
+<dl class="py class">
+<dt class="sig sig-object py" id="sortinghat.cli.client.schema.OrganizationType">
+<em class="property"><span class="pre">class</span> </em><span class="sig-prename descclassname"><span class="pre">sortinghat.cli.client.schema.</span></span><span class="sig-name descname"><span class="pre">OrganizationType</span></span><span class="sig-paren">(</span><em class="sig-param"><span class="n"><span class="pre">json_data</span></span></em>, <em class="sig-param"><span class="n"><span class="pre">selection_list</span></span><span class="o"><span class="pre">=</span></span><span class="default_value"><span class="pre">None</span></span></em><span class="sig-paren">)</span><a class="reference internal" href="../_modules/sortinghat/cli/client/schema.html#OrganizationType"><span class="viewcode-link"><span class="pre">[source]</span></span></a><a class="headerlink" href="#sortinghat.cli.client.schema.OrganizationType" title="Permalink to this definition">¶</a></dt>
+<dd><p>Bases: <code class="xref py py-class docutils literal notranslate"><span class="pre">sgqlc.types.Type</span></code></p>
+</dd></dl>
+<dl class="py class">
+<dt class="sig sig-object py" id="sortinghat.cli.client.schema.PaginationType">
+<em class="property"><span class="pre">class</span> </em><span class="sig-prename descclassname"><span class="pre">sortinghat.cli.client.schema.</span></span><span class="sig-name descname"><span class="pre">PaginationType</span></span><span class="sig-paren">(</span><em class="sig-param"><span class="n"><span class="pre">json_data</span></span></em>, <em class="sig-param"><span class="n"><span class="pre">selection_list</span></span><span class="o"><span class="pre">=</span></span><span class="default_value"><span class="pre">None</span></span></em><span class="sig-paren">)</span><a class="reference internal" href="../_modules/sortinghat/cli/client/schema.html#PaginationType"><span class="viewcode-link"><span class="pre">[source]</span></span></a><a class="headerlink" href="#sortinghat.cli.client.schema.PaginationType" title="Permalink to this definition">¶</a></dt>
+<dd><p>Bases: <code class="xref py py-class docutils literal notranslate"><span class="pre">sgqlc.types.Type</span></code></p>
+</dd></dl>
+<dl class="py class">
+<dt class="sig sig-object py" id="sortinghat.cli.client.schema.ProfileInputType">
+<em class="property"><span class="pre">class</span> </em><span class="sig-prename descclassname"><span class="pre">sortinghat.cli.client.schema.</span></span><span class="sig-name descname"><span class="pre">ProfileInputType</span></span><span class="sig-paren">(</span><em class="sig-param"><span class="n"><span class="pre">_json_obj</span></span><span class="o"><span class="pre">=</span></span><span class="default_value"><span class="pre">None</span></span></em>, <em class="sig-param"><span class="n"><span class="pre">_selection_list</span></span><span class="o"><span class="pre">=</span></span><span class="default_value"><span class="pre">None</span></span></em>, <em class="sig-param"><span class="o"><span class="pre">**</span></span><span class="n"><span class="pre">kwargs</span></span></em><span class="sig-paren">)</span><a class="reference internal" href="../_modules/sortinghat/cli/client/schema.html#ProfileInputType"><span class="viewcode-link"><span class="pre">[source]</span></span></a><a class="headerlink" href="#sortinghat.cli.client.schema.ProfileInputType" title="Permalink to this definition">¶</a></dt>
+<dd><p>Bases: <code class="xref py py-class docutils literal notranslate"><span class="pre">sgqlc.types.Input</span></code></p>
+</dd></dl>
+<dl class="py class">
+<dt class="sig sig-object py" id="sortinghat.cli.client.schema.ProfileType">
+<em class="property"><span class="pre">class</span> </em><span class="sig-prename descclassname"><span class="pre">sortinghat.cli.client.schema.</span></span><span class="sig-name descname"><span class="pre">ProfileType</span></span><span class="sig-paren">(</span><em class="sig-param"><span class="n"><span class="pre">json_data</span></span></em>, <em class="sig-param"><span class="n"><span class="pre">selection_list</span></span><span class="o"><span class="pre">=</span></span><span class="default_value"><span class="pre">None</span></span></em><span class="sig-paren">)</span><a class="reference internal" href="../_modules/sortinghat/cli/client/schema.html#ProfileType"><span class="viewcode-link"><span class="pre">[source]</span></span></a><a class="headerlink" href="#sortinghat.cli.client.schema.ProfileType" title="Permalink to this definition">¶</a></dt>
+<dd><p>Bases: <code class="xref py py-class docutils literal notranslate"><span class="pre">sgqlc.types.Type</span></code></p>
+</dd></dl>
+<dl class="py class">
+<dt class="sig sig-object py" id="sortinghat.cli.client.schema.Query">
+<em class="property"><span class="pre">class</span> </em><span class="sig-prename descclassname"><span class="pre">sortinghat.cli.client.schema.</span></span><span class="sig-name descname"><span class="pre">Query</span></span><span class="sig-paren">(</span><em class="sig-param"><span class="n"><span class="pre">json_data</span></span></em>, <em class="sig-param"><span class="n"><span class="pre">selection_list</span></span><span class="o"><span class="pre">=</span></span><span class="default_value"><span class="pre">None</span></span></em><span class="sig-paren">)</span><a class="reference internal" href="../_modules/sortinghat/cli/client/schema.html#Query"><span class="viewcode-link"><span class="pre">[source]</span></span></a><a class="headerlink" href="#sortinghat.cli.client.schema.Query" title="Permalink to this definition">¶</a></dt>
+<dd><p>Bases: <code class="xref py py-class docutils literal notranslate"><span class="pre">sgqlc.types.Type</span></code></p>
+</dd></dl>
+<dl class="py class">
+<dt class="sig sig-object py" id="sortinghat.cli.client.schema.RecommendAffiliations">
+<em class="property"><span class="pre">class</span> </em><span class="sig-prename descclassname"><span class="pre">sortinghat.cli.client.schema.</span></span><span class="sig-name descname"><span class="pre">RecommendAffiliations</span></span><span class="sig-paren">(</span><em class="sig-param"><span class="n"><span class="pre">json_data</span></span></em>, <em class="sig-param"><span class="n"><span class="pre">selection_list</span></span><span class="o"><span class="pre">=</span></span><span class="default_value"><span class="pre">None</span></span></em><span class="sig-paren">)</span><a class="reference internal" href="../_modules/sortinghat/cli/client/schema.html#RecommendAffiliations"><span class="viewcode-link"><span class="pre">[source]</span></span></a><a class="headerlink" href="#sortinghat.cli.client.schema.RecommendAffiliations" title="Permalink to this definition">¶</a></dt>
+<dd><p>Bases: <code class="xref py py-class docutils literal notranslate"><span class="pre">sgqlc.types.Type</span></code></p>
+</dd></dl>
+<dl class="py class">
+<dt class="sig sig-object py" id="sortinghat.cli.client.schema.RecommendMatches">
+<em class="property"><span class="pre">class</span> </em><span class="sig-prename descclassname"><span class="pre">sortinghat.cli.client.schema.</span></span><span class="sig-name descname"><span class="pre">RecommendMatches</span></span><span class="sig-paren">(</span><em class="sig-param"><span class="n"><span class="pre">json_data</span></span></em>, <em class="sig-param"><span class="n"><span class="pre">selection_list</span></span><span class="o"><span class="pre">=</span></span><span class="default_value"><span class="pre">None</span></span></em><span class="sig-paren">)</span><a class="reference internal" href="../_modules/sortinghat/cli/client/schema.html#RecommendMatches"><span class="viewcode-link"><span class="pre">[source]</span></span></a><a class="headerlink" href="#sortinghat.cli.client.schema.RecommendMatches" title="Permalink to this definition">¶</a></dt>
+<dd><p>Bases: <code class="xref py py-class docutils literal notranslate"><span class="pre">sgqlc.types.Type</span></code></p>
+</dd></dl>
+<dl class="py class">
+<dt class="sig sig-object py" id="sortinghat.cli.client.schema.Refresh">
+<em class="property"><span class="pre">class</span> </em><span class="sig-prename descclassname"><span class="pre">sortinghat.cli.client.schema.</span></span><span class="sig-name descname"><span class="pre">Refresh</span></span><span class="sig-paren">(</span><em class="sig-param"><span class="n"><span class="pre">json_data</span></span></em>, <em class="sig-param"><span class="n"><span class="pre">selection_list</span></span><span class="o"><span class="pre">=</span></span><span class="default_value"><span class="pre">None</span></span></em><span class="sig-paren">)</span><a class="reference internal" href="../_modules/sortinghat/cli/client/schema.html#Refresh"><span class="viewcode-link"><span class="pre">[source]</span></span></a><a class="headerlink" href="#sortinghat.cli.client.schema.Refresh" title="Permalink to this definition">¶</a></dt>
+<dd><p>Bases: <code class="xref py py-class docutils literal notranslate"><span class="pre">sgqlc.types.Type</span></code></p>
+</dd></dl>
+<dl class="py class">
+<dt class="sig sig-object py" id="sortinghat.cli.client.schema.SortingHatMutation">
+<em class="property"><span class="pre">class</span> </em><span class="sig-prename descclassname"><span class="pre">sortinghat.cli.client.schema.</span></span><span class="sig-name descname"><span class="pre">SortingHatMutation</span></span><span class="sig-paren">(</span><em class="sig-param"><span class="n"><span class="pre">json_data</span></span></em>, <em class="sig-param"><span class="n"><span class="pre">selection_list</span></span><span class="o"><span class="pre">=</span></span><span class="default_value"><span class="pre">None</span></span></em><span class="sig-paren">)</span><a class="reference internal" href="../_modules/sortinghat/cli/client/schema.html#SortingHatMutation"><span class="viewcode-link"><span class="pre">[source]</span></span></a><a class="headerlink" href="#sortinghat.cli.client.schema.SortingHatMutation" title="Permalink to this definition">¶</a></dt>
+<dd><p>Bases: <code class="xref py py-class docutils literal notranslate"><span class="pre">sgqlc.types.Type</span></code></p>
+</dd></dl>
+<dl class="py class">
+<dt class="sig sig-object py" id="sortinghat.cli.client.schema.TransactionFilterType">
+<em class="property"><span class="pre">class</span> </em><span class="sig-prename descclassname"><span class="pre">sortinghat.cli.client.schema.</span></span><span class="sig-name descname"><span class="pre">TransactionFilterType</span></span><span class="sig-paren">(</span><em class="sig-param"><span class="n"><span class="pre">_json_obj</span></span><span class="o"><span class="pre">=</span></span><span class="default_value"><span class="pre">None</span></span></em>, <em class="sig-param"><span class="n"><span class="pre">_selection_list</span></span><span class="o"><span class="pre">=</span></span><span class="default_value"><span class="pre">None</span></span></em>, <em class="sig-param"><span class="o"><span class="pre">**</span></span><span class="n"><span class="pre">kwargs</span></span></em><span class="sig-paren">)</span><a class="reference internal" href="../_modules/sortinghat/cli/client/schema.html#TransactionFilterType"><span class="viewcode-link"><span class="pre">[source]</span></span></a><a class="headerlink" href="#sortinghat.cli.client.schema.TransactionFilterType" title="Permalink to this definition">¶</a></dt>
+<dd><p>Bases: <code class="xref py py-class docutils literal notranslate"><span class="pre">sgqlc.types.Input</span></code></p>
+</dd></dl>
+<dl class="py class">
+<dt class="sig sig-object py" id="sortinghat.cli.client.schema.TransactionPaginatedType">
+<em class="property"><span class="pre">class</span> </em><span class="sig-prename descclassname"><span class="pre">sortinghat.cli.client.schema.</span></span><span class="sig-name descname"><span class="pre">TransactionPaginatedType</span></span><span class="sig-paren">(</span><em class="sig-param"><span class="n"><span class="pre">json_data</span></span></em>, <em class="sig-param"><span class="n"><span class="pre">selection_list</span></span><span class="o"><span class="pre">=</span></span><span class="default_value"><span class="pre">None</span></span></em><span class="sig-paren">)</span><a class="reference internal" href="../_modules/sortinghat/cli/client/schema.html#TransactionPaginatedType"><span class="viewcode-link"><span class="pre">[source]</span></span></a><a class="headerlink" href="#sortinghat.cli.client.schema.TransactionPaginatedType" title="Permalink to this definition">¶</a></dt>
+<dd><p>Bases: <code class="xref py py-class docutils literal notranslate"><span class="pre">sgqlc.types.Type</span></code></p>
+</dd></dl>
+<dl class="py class">
+<dt class="sig sig-object py" id="sortinghat.cli.client.schema.TransactionType">
+<em class="property"><span class="pre">class</span> </em><span class="sig-prename descclassname"><span class="pre">sortinghat.cli.client.schema.</span></span><span class="sig-name descname"><span class="pre">TransactionType</span></span><span class="sig-paren">(</span><em class="sig-param"><span class="n"><span class="pre">json_data</span></span></em>, <em class="sig-param"><span class="n"><span class="pre">selection_list</span></span><span class="o"><span class="pre">=</span></span><span class="default_value"><span class="pre">None</span></span></em><span class="sig-paren">)</span><a class="reference internal" href="../_modules/sortinghat/cli/client/schema.html#TransactionType"><span class="viewcode-link"><span class="pre">[source]</span></span></a><a class="headerlink" href="#sortinghat.cli.client.schema.TransactionType" title="Permalink to this definition">¶</a></dt>
+<dd><p>Bases: <code class="xref py py-class docutils literal notranslate"><span class="pre">sgqlc.types.Type</span></code></p>
+</dd></dl>
+<dl class="py class">
+<dt class="sig sig-object py" id="sortinghat.cli.client.schema.Unify">
+<em class="property"><span class="pre">class</span> </em><span class="sig-prename descclassname"><span class="pre">sortinghat.cli.client.schema.</span></span><span class="sig-name descname"><span class="pre">Unify</span></span><span class="sig-paren">(</span><em class="sig-param"><span class="n"><span class="pre">json_data</span></span></em>, <em class="sig-param"><span class="n"><span class="pre">selection_list</span></span><span class="o"><span class="pre">=</span></span><span class="default_value"><span class="pre">None</span></span></em><span class="sig-paren">)</span><a class="reference internal" href="../_modules/sortinghat/cli/client/schema.html#Unify"><span class="viewcode-link"><span class="pre">[source]</span></span></a><a class="headerlink" href="#sortinghat.cli.client.schema.Unify" title="Permalink to this definition">¶</a></dt>
+<dd><p>Bases: <code class="xref py py-class docutils literal notranslate"><span class="pre">sgqlc.types.Type</span></code></p>
+</dd></dl>
+<dl class="py class">
+<dt class="sig sig-object py" id="sortinghat.cli.client.schema.UnifyResultType">
+<em class="property"><span class="pre">class</span> </em><span class="sig-prename descclassname"><span class="pre">sortinghat.cli.client.schema.</span></span><span class="sig-name descname"><span class="pre">UnifyResultType</span></span><span class="sig-paren">(</span><em class="sig-param"><span class="n"><span class="pre">json_data</span></span></em>, <em class="sig-param"><span class="n"><span class="pre">selection_list</span></span><span class="o"><span class="pre">=</span></span><span class="default_value"><span class="pre">None</span></span></em><span class="sig-paren">)</span><a class="reference internal" href="../_modules/sortinghat/cli/client/schema.html#UnifyResultType"><span class="viewcode-link"><span class="pre">[source]</span></span></a><a class="headerlink" href="#sortinghat.cli.client.schema.UnifyResultType" title="Permalink to this definition">¶</a></dt>
+<dd><p>Bases: <code class="xref py py-class docutils literal notranslate"><span class="pre">sgqlc.types.Type</span></code></p>
+</dd></dl>
+<dl class="py class">
+<dt class="sig sig-object py" id="sortinghat.cli.client.schema.Unlock">
+<em class="property"><span class="pre">class</span> </em><span class="sig-prename descclassname"><span class="pre">sortinghat.cli.client.schema.</span></span><span class="sig-name descname"><span class="pre">Unlock</span></span><span class="sig-paren">(</span><em class="sig-param"><span class="n"><span class="pre">json_data</span></span></em>, <em class="sig-param"><span class="n"><span class="pre">selection_list</span></span><span class="o"><span class="pre">=</span></span><span class="default_value"><span class="pre">None</span></span></em><span class="sig-paren">)</span><a class="reference internal" href="../_modules/sortinghat/cli/client/schema.html#Unlock"><span class="viewcode-link"><span class="pre">[source]</span></span></a><a class="headerlink" href="#sortinghat.cli.client.schema.Unlock" title="Permalink to this definition">¶</a></dt>
+<dd><p>Bases: <code class="xref py py-class docutils literal notranslate"><span class="pre">sgqlc.types.Type</span></code></p>
+</dd></dl>
+<dl class="py class">
+<dt class="sig sig-object py" id="sortinghat.cli.client.schema.UnmergeIdentities">
+<em class="property"><span class="pre">class</span> </em><span class="sig-prename descclassname"><span class="pre">sortinghat.cli.client.schema.</span></span><span class="sig-name descname"><span class="pre">UnmergeIdentities</span></span><span class="sig-paren">(</span><em class="sig-param"><span class="n"><span class="pre">json_data</span></span></em>, <em class="sig-param"><span class="n"><span class="pre">selection_list</span></span><span class="o"><span class="pre">=</span></span><span class="default_value"><span class="pre">None</span></span></em><span class="sig-paren">)</span><a class="reference internal" href="../_modules/sortinghat/cli/client/schema.html#UnmergeIdentities"><span class="viewcode-link"><span class="pre">[source]</span></span></a><a class="headerlink" href="#sortinghat.cli.client.schema.UnmergeIdentities" title="Permalink to this definition">¶</a></dt>
+<dd><p>Bases: <code class="xref py py-class docutils literal notranslate"><span class="pre">sgqlc.types.Type</span></code></p>
+</dd></dl>
+<dl class="py class">
+<dt class="sig sig-object py" id="sortinghat.cli.client.schema.UpdateEnrollment">
+<em class="property"><span class="pre">class</span> </em><span class="sig-prename descclassname"><span class="pre">sortinghat.cli.client.schema.</span></span><span class="sig-name descname"><span class="pre">UpdateEnrollment</span></span><span class="sig-paren">(</span><em class="sig-param"><span class="n"><span class="pre">json_data</span></span></em>, <em class="sig-param"><span class="n"><span class="pre">selection_list</span></span><span class="o"><span class="pre">=</span></span><span class="default_value"><span class="pre">None</span></span></em><span class="sig-paren">)</span><a class="reference internal" href="../_modules/sortinghat/cli/client/schema.html#UpdateEnrollment"><span class="viewcode-link"><span class="pre">[source]</span></span></a><a class="headerlink" href="#sortinghat.cli.client.schema.UpdateEnrollment" title="Permalink to this definition">¶</a></dt>
+<dd><p>Bases: <code class="xref py py-class docutils literal notranslate"><span class="pre">sgqlc.types.Type</span></code></p>
+</dd></dl>
+<dl class="py class">
+<dt class="sig sig-object py" id="sortinghat.cli.client.schema.UpdateProfile">
+<em class="property"><span class="pre">class</span> </em><span class="sig-prename descclassname"><span class="pre">sortinghat.cli.client.schema.</span></span><span class="sig-name descname"><span class="pre">UpdateProfile</span></span><span class="sig-paren">(</span><em class="sig-param"><span class="n"><span class="pre">json_data</span></span></em>, <em class="sig-param"><span class="n"><span class="pre">selection_list</span></span><span class="o"><span class="pre">=</span></span><span class="default_value"><span class="pre">None</span></span></em><span class="sig-paren">)</span><a class="reference internal" href="../_modules/sortinghat/cli/client/schema.html#UpdateProfile"><span class="viewcode-link"><span class="pre">[source]</span></span></a><a class="headerlink" href="#sortinghat.cli.client.schema.UpdateProfile" title="Permalink to this definition">¶</a></dt>
+<dd><p>Bases: <code class="xref py py-class docutils literal notranslate"><span class="pre">sgqlc.types.Type</span></code></p>
+</dd></dl>
+<dl class="py class">
+<dt class="sig sig-object py" id="sortinghat.cli.client.schema.Verify">
+<em class="property"><span class="pre">class</span> </em><span class="sig-prename descclassname"><span class="pre">sortinghat.cli.client.schema.</span></span><span class="sig-name descname"><span class="pre">Verify</span></span><span class="sig-paren">(</span><em class="sig-param"><span class="n"><span class="pre">json_data</span></span></em>, <em class="sig-param"><span class="n"><span class="pre">selection_list</span></span><span class="o"><span class="pre">=</span></span><span class="default_value"><span class="pre">None</span></span></em><span class="sig-paren">)</span><a class="reference internal" href="../_modules/sortinghat/cli/client/schema.html#Verify"><span class="viewcode-link"><span class="pre">[source]</span></span></a><a class="headerlink" href="#sortinghat.cli.client.schema.Verify" title="Permalink to this definition">¶</a></dt>
+<dd><p>Bases: <code class="xref py py-class docutils literal notranslate"><span class="pre">sgqlc.types.Type</span></code></p>
+</dd></dl>
+<dl class="py class">
+<dt class="sig sig-object py" id="sortinghat.cli.client.schema.Withdraw">
+<em class="property"><span class="pre">class</span> </em><span class="sig-prename descclassname"><span class="pre">sortinghat.cli.client.schema.</span></span><span class="sig-name descname"><span class="pre">Withdraw</span></span><span class="sig-paren">(</span><em class="sig-param"><span class="n"><span class="pre">json_data</span></span></em>, <em class="sig-param"><span class="n"><span class="pre">selection_list</span></span><span class="o"><span class="pre">=</span></span><span class="default_value"><span class="pre">None</span></span></em><span class="sig-paren">)</span><a class="reference internal" href="../_modules/sortinghat/cli/client/schema.html#Withdraw"><span class="viewcode-link"><span class="pre">[source]</span></span></a><a class="headerlink" href="#sortinghat.cli.client.schema.Withdraw" title="Permalink to this definition">¶</a></dt>
+<dd><p>Bases: <code class="xref py py-class docutils literal notranslate"><span class="pre">sgqlc.types.Type</span></code></p>
+</dd></dl>
 </div>
-<div class="section" id="module-contents">
-<h2>Module contents<a class="headerlink" href="#module-contents" title="Permalink to this headline">¶</a></h2>
+<div class="section" id="module-sortinghat.cli.client">
+<span id="module-contents"></span><h2>Module contents<a class="headerlink" href="#module-sortinghat.cli.client" title="Permalink to this headline">¶</a></h2>
 </div>
 </div>
 
@@ -199,9 +561,9 @@
             <ul>
 <li><a class="reference internal" href="#">sortinghat.cli.client package</a><ul>
 <li><a class="reference internal" href="#submodules">Submodules</a></li>
-<li><a class="reference internal" href="#sortinghat-cli-client-client-module">sortinghat.cli.client.client module</a></li>
-<li><a class="reference internal" href="#sortinghat-cli-client-schema-module">sortinghat.cli.client.schema module</a></li>
-<li><a class="reference internal" href="#module-contents">Module contents</a></li>
+<li><a class="reference internal" href="#module-sortinghat.cli.client.client">sortinghat.cli.client.client module</a></li>
+<li><a class="reference internal" href="#module-sortinghat.cli.client.schema">sortinghat.cli.client.schema module</a></li>
+<li><a class="reference internal" href="#module-sortinghat.cli.client">Module contents</a></li>
 </ul>
 </li>
 </ul>

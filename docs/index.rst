@@ -3,40 +3,24 @@
    You can adapt this file completely to your liking, but it should at least
    contain the root `toctree` directive.
 
+SortingHat
+==========
 
-About GrimoireLab 
-=========================================
-
-GrimoireLab is a 100% free, open source toolset from CHAOSS to do software development analytics, that includes:
-
-.. toctree::
-   :caption: About:
-   :hidden:
-
-   About <about.md>
+A tool to manage identities.
 
 .. toctree::
-   :caption: Sortinghat:
-   :hidden:
+   :maxdepth: 1
+   :caption: SortingHat:
    
-   Sortinghat <sortinghat/index.md>
-   Profiles & Identities <sortinghat/profile.md>
-   Database <sortinghat/database.md>
-   Setup Sortinghat <sortinghat/setup.md>
-   SortingHat's interface <sortinghat/interface.md>
-   Creating profiles <sortinghat/create-profile.md>
-   Removing profiles <sortinghat/remove-profile.md>
-   Merging profiles <sortinghat/merging-profile.md>
-   Editing profiles <sortinghat/edit-profile.md>
-   Add/Edit Orgs <sortinghat/add-org.md>
-   Delete Orgs <sortinghat/delete-orgs.md>
-   Un-merge profiles <sortinghat/unmerge-profiles.md>
-   Whats more... <sortinghat/additional.md>
-   Troubleshoot <sortinghat/troubleshoot.md>
+   What is SortingHat ? <sortinghat/index.md>
+   Profiles and Identities <sortinghat/profile.md>
+   Using SortingHat <sortinghat/using-sortinghat.rst>
 
-Indices and tables
-==================
+.. toctree::
+   :maxdepth: 2
+   :caption: Developer Documentation:
 
-* :ref:`genindex`
-* :ref:`modindex`
-* :ref:`search`
+   SortingHat's Database <sortinghat/database.md>
+   Install SortingHat (Backend and Frontend) <https://github.com/chaoss/grimoirelab-sortinghat/blob/muggle/README.md#requirements>
+   Install SortingHat as a Service <https://github.com/chaoss/grimoirelab-sortinghat/blob/muggle/README.md#sortinghat-service>
+   API reference doc <sortinghat/api-reference.rst>
